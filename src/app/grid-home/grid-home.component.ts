@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { GridBlock } from '../grid-block';
-import { HostListener } from '@angular/core';
+import { GridTile } from '../grid-tile';
 
 @Component({
   selector: 'app-grid-home',
@@ -10,10 +10,11 @@ import { HostListener } from '@angular/core';
 export class GridHomeComponent implements OnInit {
 
   blocks: GridBlock[];
+  tiles: GridTile[];
   deviceHeight: number;
   deviceWidth: number;
 
-  layoutGrid(blockSize:number): void {
+  layoutBlocks(blockSize:number): void {
     var blockWidth: number = blockSize;
     var blockHeight: number = blockSize;
 
@@ -64,21 +65,41 @@ export class GridHomeComponent implements OnInit {
 
   }
 
-  createBlocks() {
+  createGrid() {
     this.deviceHeight = window.innerHeight;
     this.deviceWidth = window.innerWidth;
 
-    this.layoutGrid(92);
+    this.tiles = [{
+      index: 0,
+      x: 0, 
+      y: 0, 
+      size: 92, 
+      imagePath: "/assets/img/Hex_Green Hex.svg", 
+      hoverPath: "/assets/img/Hex_Green Filled Hex.svg", 
+      name: "test", 
+      description: "this is a test!", 
+      hovering: false
+    }];
+
+    this.layoutBlocks(92);
   }
 
   constructor() {}
 
   ngOnInit() {
-    this.createBlocks();
+    this.createGrid();
   }
 
   @HostListener('window:resize') onResize() {
-    this.createBlocks();
+    this.createGrid();
+  }
+
+  onTileHover(index: number) {
+    this.tiles[index].hovering = true;
+  }
+
+  onTileLeave(index: number) {
+    this.tiles[index].hovering = false;
   }
 
 }
