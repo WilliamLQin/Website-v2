@@ -2,8 +2,7 @@
   
   <div [ngStyle]=
   "{
-    'margin-left': 'calc(' + (-block.size/2 + block.x) + 'px)',
-    'margin-top': 'calc(' + (-block.size/2 + block.y) + 'px)',
+    'transform': 'translate(calc(' + (-block.size/2 + block.x) + 'px), calc(' + (-block.size/2 + block.y) + 'px))',
     'width': 'calc(' + (block.size) + 'px)',
     'height': 'calc(' + (block.size) + 'px)'
   }" 
@@ -14,33 +13,38 @@
 </div>
 <div *ngFor="let tile of tiles">
 
-    <div [ngStyle]=
-    "{
-      'margin-left': 'calc(' + (-tile.size/2 + tile.x) + 'px)',
-      'margin-top': 'calc(' + (-tile.size/2 + tile.y) + 'px)',
-      'width': 'calc(' + (tile.size) + 'px)',
-      'height': 'calc(' + (tile.size) + 'px)'
-    }"
-    class="block-container">
+  <div [ngStyle]=
+  "{
+    'transform': 'translate(calc(' + (-tile.size/2 + tile.x) + 'px), calc(' + (-tile.size/2 + tile.y) + 'px))',
+    'width': 'calc(' + (tile.size) + 'px)',
+    'height': 'calc(' + (tile.size) + 'px)'
+  }"
+  class="block-container">
 
-      <!-- Main Image -->
-      <div id={{tile.name}}>
-        <img class="block" src={{tile.imagePath}}/>
-      </div>
-      <!-- Hover Image -->
-      <div *ngIf="tile.hovering"  id="{{tile.name}}-overlay">
-        <img class="block" src={{tile.hoverPath}}/>
-      </div>
-
-      <!-- Hover Bounds -->
-      <div>
-          <svg class="block" [attr.viewBox]="tile.viewBox">
-            <polygon (mouseover)="onTileHover(tile.index)" (mouseleave)="onTileLeave(tile.index)"
-              style="fill:rgba(0,0,0,0)"
-              [attr.points]="tile.svgPoints"/>
-          </svg>
-      </div>
-      
+    <!-- Main Image -->
+    <div id={{tile.name}}>
+      <img class="block" src={{tile.imagePath}}/>
+    </div>
+    <!-- Hover Image -->
+    <div *ngIf="tile.hovering"  id="{{tile.name}}-overlay">
+      <img class="block" src={{tile.hoverPath}}/>
     </div>
 
+  </div>
+
 </div>
+
+<svg class="block" [attr.viewBox]="viewBox">
+  <g *ngFor="let tile of tiles" [ngStyle]=
+  "{
+    'transform': 'translate(calc(' + ((-tile.size/2 + tile.x + (deviceWidth/2)) * svgToGridRatio) + 'px), calc(' + ((-tile.size/2 + tile.y + (deviceHeight/2)) * svgToGridRatio) + 'px))'
+  }"
+  class="tile">
+    
+    <polygon (mouseover)="onTileHover(tile.index)" (mouseleave)="onTileLeave(tile.index)"
+      style="fill:rgba(0,0,0,0)"
+      [attr.points]="tile.svgPoints" transform="rotate(0)"/>
+      
+  </g>
+
+</svg>

@@ -6,7 +6,7 @@
     left: 0;
     right: 0;
 }
-div.block-container {
+.block-container {
     width: 24px;
     height: 24px;
 
@@ -16,4 +16,9 @@ div.block-container {
     text-align: center;
     /* margin-left: calc(-12px + 2*24px);
     margin-top: calc(-12px); */
+}
+
+g.tile {
+    position: absolute;
+    text-align: center;
 }

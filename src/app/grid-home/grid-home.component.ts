@@ -1,7 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { GridBlock } from '../grid-block';
-import { GridTile } from '../grid-tile';
-import { TILES } from '../tiles';
+import { GridTile, TILES } from '../grid-tile';
 
 @Component({
   selector: 'app-grid-home',
@@ -9,21 +8,26 @@ import { TILES } from '../tiles';
   styleUrls: ['./grid-home.component.css']
 })
 export class GridHomeComponent implements OnInit {
-
+  
   blocks: GridBlock[];
   tiles = TILES;
   deviceHeight: number;
   deviceWidth: number;
+  viewBox: string;
 
-  layoutBlocks(blockSize:number): void {
-    var blockWidth: number = blockSize;
-    var blockHeight: number = blockSize;
+  blockSize: number = 92;
+  svgBlockSize: number = 256;
+  svgToGridRatio: number;
+
+  layoutBlocks(): void {
+    var blockWidth: number = this.blockSize;
+    var blockHeight: number = this.blockSize;
 
     blockWidth *= Math.sqrt(3)/2;
     blockWidth -= 0.75;
 
     this.blocks = [];
-    this.blocks = [{ring: 0, pos: 0, x: 0, y: 0, size: blockSize}];
+    this.blocks = [{ring: 0, pos: 0, x: 0, y: 0, size: this.blockSize}];
     var currRing: number = 0;
     var currPos: number = 0;
     var currX: number = 0;
@@ -36,7 +40,7 @@ export class GridHomeComponent implements OnInit {
       currY = 0;
       for (currPos = 0; currPos < currPerimeter; currPos++) {
         if (Math.abs(currX*2) < (this.deviceWidth + blockWidth) && Math.abs(currY*2) < (this.deviceHeight + blockHeight)) {
-          this.blocks.push({ring: currRing, pos: currPos, x: currX, y: currY, size: blockSize});
+          this.blocks.push({ring: currRing, pos: currPos, x: currX, y: currY, size: this.blockSize});
         }
         if (currPos < currPerimeter*(1/6)) {
           currX -= (1/2) * blockWidth;
@@ -70,7 +74,11 @@ export class GridHomeComponent implements OnInit {
     this.deviceHeight = window.innerHeight;
     this.deviceWidth = window.innerWidth;
 
-    this.layoutBlocks(92);
+    this.svgToGridRatio = this.svgBlockSize / this.blockSize;
+
+    this.viewBox = "0 0 " + this.deviceWidth * this.svgToGridRatio + " " + this.deviceHeight * this.svgToGridRatio;
+
+    this.layoutBlocks();
   }
 
   constructor() {}
