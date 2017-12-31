@@ -1,0 +1,14 @@
+<div *ngFor="let block of blocks">
+
+  <div [ngStyle]=
+  "{
+    'margin-left': 'calc(' + (-block.size/2 + block.x) + 'px)',
+    'margin-top': 'calc(' + (-block.size/2 + block.y) + 'px)',
+    'width': 'calc(' + (block.size) + 'px)',
+    'height': 'calc(' + (block.size) + 'px)'
+  }" 
+  class="block-container">
+    <img class="block" src="/assets/img/Hex-02.svg"/>
+  </div>
+
+</div>
