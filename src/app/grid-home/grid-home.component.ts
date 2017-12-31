@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { GridBlock } from '../grid-block';
 import { GridTile } from '../grid-tile';
+import { TILES } from '../tiles';
 
 @Component({
   selector: 'app-grid-home',
@@ -10,7 +11,7 @@ import { GridTile } from '../grid-tile';
 export class GridHomeComponent implements OnInit {
 
   blocks: GridBlock[];
-  tiles: GridTile[];
+  tiles = TILES;
   deviceHeight: number;
   deviceWidth: number;
 
@@ -68,18 +69,6 @@ export class GridHomeComponent implements OnInit {
   createGrid() {
     this.deviceHeight = window.innerHeight;
     this.deviceWidth = window.innerWidth;
-
-    this.tiles = [{
-      index: 0,
-      x: 0, 
-      y: 0, 
-      size: 92, 
-      imagePath: "/assets/img/Hex_Green Hex.svg", 
-      hoverPath: "/assets/img/Hex_Green Filled Hex.svg", 
-      name: "test", 
-      description: "this is a test!", 
-      hovering: false
-    }];
 
     this.layoutBlocks(92);
   }

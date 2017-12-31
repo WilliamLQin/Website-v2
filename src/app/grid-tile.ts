@@ -3,6 +3,8 @@ export class GridTile {
     x: number;
     y: number;
     size: number;
+    viewBox: string;
+    svgPoints: string;
     imagePath: string;
     hoverPath: string;
     name: string;

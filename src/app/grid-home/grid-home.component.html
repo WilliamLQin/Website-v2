@@ -1,5 +1,5 @@
 <div *ngFor="let block of blocks">
-
+  
   <div [ngStyle]=
   "{
     'margin-left': 'calc(' + (-block.size/2 + block.x) + 'px)',
@@ -8,23 +8,39 @@
     'height': 'calc(' + (block.size) + 'px)'
   }" 
   class="block-container">
-    <img class="block" src="/assets/img/Hex_Blue Hex.svg"/>
+          <img class="block" src="/assets/img/Hex_Blue Hex.svg"/>
   </div>
 
 </div>
 <div *ngFor="let tile of tiles">
-  <div [ngStyle]=
-  "{
-    'margin-left': 'calc(' + (-tile.size/2 + tile.x) + 'px)',
-    'margin-top': 'calc(' + (-tile.size/2 + tile.y) + 'px)',
-    'width': 'calc(' + (tile.size) + 'px)',
-    'height': 'calc(' + (tile.size) + 'px)'
-  }"
-  class="block-container">
-    <img (mouseover)="onTileHover(tile.index)" id={{tile.name}} class="block" src={{tile.imagePath}}/>
-    <div *ngIf="tile.hovering" (mouseleave)="onTileLeave(tile.index)" id="{{tile.name}}-overlay">
-      <img class="block" src={{tile.hoverPath}}/>
+
+    <div [ngStyle]=
+    "{
+      'margin-left': 'calc(' + (-tile.size/2 + tile.x) + 'px)',
+      'margin-top': 'calc(' + (-tile.size/2 + tile.y) + 'px)',
+      'width': 'calc(' + (tile.size) + 'px)',
+      'height': 'calc(' + (tile.size) + 'px)'
+    }"
+    class="block-container">
+
+      <!-- Main Image -->
+      <div id={{tile.name}}>
+        <img class="block" src={{tile.imagePath}}/>
+      </div>
+      <!-- Hover Image -->
+      <div *ngIf="tile.hovering"  id="{{tile.name}}-overlay">
+        <img class="block" src={{tile.hoverPath}}/>
+      </div>
+
+      <!-- Hover Bounds -->
+      <div>
+          <svg class="block" [attr.viewBox]="tile.viewBox">
+            <polygon (mouseover)="onTileHover(tile.index)" (mouseleave)="onTileLeave(tile.index)"
+              style="fill:rgba(0,0,0,0)"
+              [attr.points]="tile.svgPoints"/>
+          </svg>
+      </div>
+      
     </div>
-    
-  </div>
+
 </div>
