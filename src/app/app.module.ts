@@ -9,6 +9,7 @@ import { AppRoutingModule } from './/app-routing.module';
 
 import { RedirectComponent } from './redirect/redirect.component';
 import { InfoViewComponent } from './info-view/info-view.component';
+import { Animations } from './animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { InfoViewComponent } from './info-view/info-view.component';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [Animations],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

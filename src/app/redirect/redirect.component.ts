@@ -13,6 +13,9 @@ export class RedirectComponent implements OnInit {
 
     ngOnInit() {
         this.sub = this.route.data
-            .subscribe(data => window.location.href = Object.keys(data).map(key => data[key])[0]);
+            .subscribe(data => {
+                var url: string = Object.keys(data).map(key => data[key])[0];
+                window.location.href = url;
+            });
     }
 }

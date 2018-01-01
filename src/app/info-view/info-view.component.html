@@ -1,4 +1,5 @@
-<div class="info-view">
+<div class="info-view" [@routeAnimation]>
+
   <svg width="100%" height="100%">
     <defs>
       <filter id="f1" x="0" y="0" width="200%" height="200%">
@@ -14,16 +15,17 @@
       'height': 'calc(' + (deviceHeight - 2 * viewOffset) + 'px)'
     }"
     [attr.rx]="boxRounding" [attr.ry]="boxRounding" 
-    style="fill:forestgreen" filter="url(#f1)" 
-    id="view_rect"/>
+    style="fill:forestgreen" filter="url(#f1)" />
   </svg>
 
-  <div class="info-view-content" [innerHTML]=html 
+  
+
+  <div class="info-view-content" [@routeAnimation] [innerHTML]=html 
   [ngStyle]="{
     'left': 'calc(' + (viewOffset + boxRounding * (2/3)) + 'px)',
     'top': 'calc(' + (viewOffset + boxRounding * (2/3)) + 'px)'
   }">
-
+    
   </div>
 
 </div>

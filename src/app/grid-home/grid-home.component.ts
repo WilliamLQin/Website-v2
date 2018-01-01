@@ -1,34 +1,19 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { GridBlock } from '../grid-block';
 import { GridTile, TILES } from '../grid-tile';
-import { trigger, transition, style, animate, state } from '@angular/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Router } from '@angular/router';
+import { Animations } from '../animations';
 
 @Component({
   selector: 'app-grid-home',
-  animations: [
-    trigger(
-      'main-overlay-animation',
-      [
-        transition(
-          ':enter', [
-            style({opacity: 0}),
-            animate('100ms', style({opacity: 1}))
-          ]
-        ),
-        transition(
-          ':leave', [
-            style({opacity: 1}),
-            animate('100ms', style({opacity: 0}))
-          ]
-        )
-      ]
-    )
-  ],
   templateUrl: './grid-home.component.html',
-  styleUrls: ['./grid-home.component.css']
+  styleUrls: ['./grid-home.component.css'],
+  animations: Animations.gridHome
 })
 export class GridHomeComponent implements OnInit {
+
+  private router: Router;
 
   sin60: number = Math.sqrt(3)/2;
 
@@ -120,7 +105,9 @@ export class GridHomeComponent implements OnInit {
     this.layoutBlocks();
   }
 
-  constructor() {}
+  constructor(r: Router) {
+    this.router = r;
+  }
 
   ngOnInit() {
     this.createGrid();
@@ -157,17 +144,16 @@ export class GridHomeComponent implements OnInit {
 
   onTileClick(index: number) {
     if (index == -1) {
-      window.location.href = "/about";
+      this.router.navigate(['/about']);
     }
     else {
-      // var url:string = this.tiles[index].targetURL;
-      // if (url.startsWith("http")) {
-      //   window.location.href = url;
-      // }
-      // else {
-      //   this.router.navigate([url]);
-      // }
-      window.location.href = this.tiles[index].targetURL;
+      var url: string = this.tiles[index].targetURL;
+      if (url.startsWith("href=")) {
+        window.location.href = url.substring(5);
+      }
+      else {
+        this.router.navigate([this.tiles[index].targetURL]);
+      }
     }
   }
 

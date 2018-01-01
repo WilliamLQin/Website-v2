@@ -1,14 +1,23 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { Animations } from '../animations';
 
 @Component({
   selector: 'app-info-view',
   templateUrl: './info-view.component.html',
-  styleUrls: ['./info-view.component.css']
+  styleUrls: ['./info-view.component.css'],
+  host: {
+    '[@routeAnimation]': 'true',
+    '[style.display]': "'block'",
+    '[style.position]': "'absolute'",
+    '[style.width]': "'100%'",
+    '[style.height]': "'100%'"
+  },
+  animations: Animations.infoView
 })
 export class InfoViewComponent implements OnInit {
 
-  viewOffset: number;
-  boxRounding: number;
+  viewOffset: number = 20;
+  boxRounding: number = 60;
 
   deviceWidth: number;
   deviceHeight: number;
@@ -28,9 +37,6 @@ export class InfoViewComponent implements OnInit {
   createView() {
     this.deviceWidth = window.innerWidth;
     this.deviceHeight = window.innerHeight;
-
-    this.viewOffset = 20;
-    this.boxRounding = 60;
   }
 
 }
