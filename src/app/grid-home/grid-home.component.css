@@ -23,7 +23,9 @@
 
     left: 0;
     width: 100%;
-    top: 25%;
+    top: 22%;
+
+    font-size: 36px;
 }
 
 .main-description {
@@ -35,5 +37,5 @@
     top: 50%;
 
     white-space: pre-line;
-    font-size: 14px;
+    font-size: 16px;
 }

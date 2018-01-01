@@ -38,7 +38,7 @@ export class GridHomeComponent implements OnInit {
   deviceWidth: number;
   viewBox: string;
 
-  blockSize: number = 100;
+  blockSize: number = 92;
   svgBlockSize: number = 256;
   svgToGridRatio: number;
 
@@ -53,7 +53,7 @@ export class GridHomeComponent implements OnInit {
     blockWidth *= this.sin60;
 
     this.blocks = [];
-    this.blocks = [{ring: 0, pos: 0, x: 0, y: 0}];
+    this.blocks = [{ring: 0, pos: 0, x: 0, y: 0, color: "Blue"}];
     var currRing: number = 0;
     var currPos: number = 0;
     var currX: number = 0;
@@ -66,7 +66,20 @@ export class GridHomeComponent implements OnInit {
       currY = 0;
       for (currPos = 0; currPos < currPerimeter; currPos++) {
         if (Math.abs(currX*2) < (this.deviceWidth + blockWidth) && Math.abs(currY*2) < (this.deviceHeight + blockHeight)) {
-          this.blocks.push({ring: currRing, pos: currPos, x: currX, y: currY});
+          var randColor: string = "Blue";
+
+          // var rand: number = Math.random();
+          // if (rand < 0.25) {
+          //   randColor = "Red";
+          // }
+          // else if (rand < 0.5) {
+          //   randColor = "Green";
+          // }
+          // else if (rand < 0.75) {
+          //   randColor = "Yellow";
+          // }
+
+          this.blocks.push({ring: currRing, pos: currPos, x: currX, y: currY, color: randColor});
         }
         if (currPos < currPerimeter*(1/6)) {
           currX -= (1/2) * blockWidth;
@@ -147,7 +160,7 @@ export class GridHomeComponent implements OnInit {
       console.log("about");
     }
     else {
-      console.log(this.tiles[index].title);
+      window.location.href = this.tiles[index].targetURL;
     }
   }
 
