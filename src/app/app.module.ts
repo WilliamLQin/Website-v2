@@ -8,12 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './/app-routing.module';
 
 import { RedirectComponent } from './redirect/redirect.component';
+import { InfoViewComponent } from './info-view/info-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GridHomeComponent,
-    RedirectComponent
+    RedirectComponent,
+    InfoViewComponent
   ],
   imports: [
     BrowserModule,
