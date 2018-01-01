@@ -157,9 +157,16 @@ export class GridHomeComponent implements OnInit {
 
   onTileClick(index: number) {
     if (index == -1) {
-      console.log("about");
+      window.location.href = "/about";
     }
     else {
+      // var url:string = this.tiles[index].targetURL;
+      // if (url.startsWith("http")) {
+      //   window.location.href = url;
+      // }
+      // else {
+      //   this.router.navigate([url]);
+      // }
       window.location.href = this.tiles[index].targetURL;
     }
   }

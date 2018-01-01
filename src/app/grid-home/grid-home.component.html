@@ -100,7 +100,7 @@
       calc(' + ((tile.size * (tile.size > 2 ? (sin60 * -blockSize/2) : (-blockSize/2)) + tile.y * blockSize + (deviceHeight/2)) * svgToGridRatio) + 'px))'
   }"
   (click)="onTileClick(tile.index)">
-    
+
     <polygon (mouseover)="onTileHover(tile.index)" (mouseleave)="onTileLeave(tile.index)"
       style="fill:rgba(0,0,0,0)" cursor="pointer"
       [attr.points]="tile.svgPoints"/>

@@ -30,7 +30,7 @@ export const TILES: GridTile[] = [
         mainPath: "/assets/img/Main Hexes/Hex_Resume Main.png",
         title: "Resume",
         description: "View my resume.",
-        targetURL: "#",
+        targetURL: "/resume",
         hovering: false
     }
     // ,{
