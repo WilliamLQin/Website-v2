@@ -147,13 +147,7 @@ export class GridHomeComponent implements OnInit {
       this.router.navigate(['/about']);
     }
     else {
-      var url: string = this.tiles[index].targetURL;
-      if (url.startsWith("href=")) {
-        window.location.href = url.substring(5);
-      }
-      else {
-        this.router.navigate([this.tiles[index].targetURL]);
-      }
+      this.router.navigate([this.tiles[index].targetURL]);
     }
   }
 
