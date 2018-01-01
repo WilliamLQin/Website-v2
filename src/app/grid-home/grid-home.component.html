@@ -1,50 +1,115 @@
+<!-- Blocks -->
 <div *ngFor="let block of blocks">
   
   <div [ngStyle]=
   "{
-    'transform': 'translate(calc(' + (-block.size/2 + block.x) + 'px), calc(' + (-block.size/2 + block.y) + 'px))',
-    'width': 'calc(' + (block.size) + 'px)',
-    'height': 'calc(' + (block.size) + 'px)'
+    'transform': 'translate(calc(' + (-blockSize/2 + block.x) + 'px), calc(' + (-blockSize/2 + block.y) + 'px))',
+    'width': 'calc(' + (blockSize) + 'px)',
+    'height': 'calc(' + (blockSize) + 'px)'
   }" 
   class="block-container">
-          <img class="block" src="/assets/img/Hex_Blue Hex.svg"/>
+          <img class="block" src="/assets/img/Base Hexes/Hex_Blue Hex.svg"/>
   </div>
 
 </div>
-<div *ngFor="let tile of tiles">
 
-  <div [ngStyle]=
+<!-- Lower Main -->
+<div [ngStyle]=
   "{
-    'transform': 'translate(calc(' + (-tile.size/2 + tile.x) + 'px), calc(' + (-tile.size/2 + tile.y) + 'px))',
-    'width': 'calc(' + (tile.size) + 'px)',
-    'height': 'calc(' + (tile.size) + 'px)'
+    'transform': 'translate(calc(' + (5 * sin60 * -blockSize/2 + 5/2) + 'px), calc(' + (5 * sin60 * -blockSize/2 + 5/2) + 'px))',
+    'width': 'calc(' + (5 * sin60 * blockSize - 5) + 'px)',
+    'height': 'calc(' + (5 * sin60 * blockSize - 5) + 'px)'
   }"
   class="block-container">
 
-    <!-- Main Image -->
+  <img class="block" src="/assets/img/Image Hexes/Hex_Portrait-min.png"/>
+
+</div>
+
+<!-- Tiles -->
+<div *ngFor="let tile of tiles">
+
+  <!-- Icons -->
+  <div [ngStyle]=
+  "{
+    'transform': 'translate(
+      calc(' + ((tile.size > 2 ? (tile.size * sin60 * -blockSize/2) : (tile.size * -blockSize/2)) + tile.x) + 'px), 
+      calc(' + ((tile.size > 2 ? (tile.size * sin60 * -blockSize/2) : (tile.size * -blockSize/2)) + tile.y) + 'px))',
+    'width': 'calc(' + (tile.size > 2 ? (tile.size * sin60 * blockSize) : (tile.size * blockSize)) + 'px)',
+    'height': 'calc(' + (tile.size > 2 ? (tile.size * sin60 * blockSize) : (tile.size * blockSize)) + 'px)'
+  }"
+  class="block-container">
+
+    <!-- Icon Image -->
     <div id={{tile.name}}>
       <img class="block" src={{tile.imagePath}}/>
     </div>
-    <!-- Hover Image -->
-    <div *ngIf="tile.hovering"  id="{{tile.name}}-overlay">
+    <!-- Overlay -->
+    <div *ngIf="tile.hovering" [@main-overlay-animation]  id="{{tile.name}}-overlay">
       <img class="block" src={{tile.hoverPath}}/>
     </div>
 
   </div>
 
+  <!-- Main Image -->
+  <div [ngStyle]=
+  "{
+    'transform': 'translate(calc(' + (5 * sin60 * -blockSize/2 + 5/2) + 'px), calc(' + (5 * sin60 * -blockSize/2 + 5/2) + 'px))',
+    'width': 'calc(' + (5 * sin60 * blockSize - 5) + 'px)',
+    'height': 'calc(' + (5 * sin60 * blockSize - 5) + 'px)'
+  }"
+  class="block-container">
+
+    <div *ngIf="tile.hovering" [@main-overlay-animation] id="{{tile.name}}-main">
+      <img class="block" src={{tile.mainPath}}/>
+    </div>
+
+  </div>
+
 </div>
 
+<!-- Upper Main -->
+<div [ngStyle]=
+  "{
+    'transform': 'translate(calc(' + (5 * sin60 * -blockSize/2 + 5/2) + 'px), calc(' + (5 * sin60 * -blockSize/2 + 5/2) + 'px))',
+    'width': 'calc(' + (5 * sin60 * blockSize - 5) + 'px)',
+    'height': 'calc(' + (5 * sin60 * blockSize - 5) + 'px)'
+  }"
+  class="block-container">
+
+  <img class="block" src="/assets/img/Main Hexes/Hex_Main Hex Border.png"/>
+
+  <div *ngIf="mainHovering" [@main-overlay-animation]>
+    <img class="block" src="/assets/img/Overlay Hexes/Hex_Overlay Hex Size 5.svg"/>
+  </div>
+
+</div>
+
+<!-- Tile click area -->
 <svg class="block" [attr.viewBox]="viewBox">
   <g *ngFor="let tile of tiles" [ngStyle]=
   "{
-    'transform': 'translate(calc(' + ((-tile.size/2 + tile.x + (deviceWidth/2)) * svgToGridRatio) + 'px), calc(' + ((-tile.size/2 + tile.y + (deviceHeight/2)) * svgToGridRatio) + 'px))'
+    'transform': 'translate(
+      calc(' + (((tile.size > 2 ? (tile.size * sin60 * -blockSize/2) : (tile.size * -blockSize/2)) + tile.x + (deviceWidth/2)) * svgToGridRatio) + 'px), 
+      calc(' + (((tile.size > 2 ? (tile.size * sin60 * -blockSize/2) : (tile.size * -blockSize/2)) + tile.y + (deviceHeight/2)) * svgToGridRatio) + 'px))'
   }"
-  class="tile">
+  class="tile" (click)="onTileClick(tile.index)">
     
     <polygon (mouseover)="onTileHover(tile.index)" (mouseleave)="onTileLeave(tile.index)"
       style="fill:rgba(0,0,0,0)"
-      [attr.points]="tile.svgPoints" transform="rotate(0)"/>
+      [attr.points]="tile.svgPoints"/>
       
   </g>
-
+  <g [ngStyle]=
+  "{
+    'transform': 'translate(
+      calc(' + ((5 * sin60 * -blockSize/2 + 5/2 + (deviceWidth/2)) * svgToGridRatio) + 'px), 
+      calc(' + ((5 * sin60 * -blockSize/2 + 5/2 + (deviceHeight/2)) * svgToGridRatio) + 'px))'
+  }"
+  class="tile" (click)="onTileClick(-1)">
+    <polygon (mouseover)="onTileHover(-1)" (mouseleave)="onTileLeave(-1)"
+      style="fill:rgba(0,0,0,0)"
+      [attr.points]="'997.68 682.25 1108.5 618.25 1108.5 490.25 997.68 426.25 997.65 298.25 886.85 234.25 886.8 106.25 775.95 42.25 665.1 106.25 554.25 42.25 443.4 106.25 332.55 42.25 221.7 106.25 221.7 234.25 110.85 298.25 110.85 426.25 -0.01 490.25 -0.01 618.25 110.85 682.25 110.85 810.25 221.7 874.25 221.7 1002.25 332.55 1066.25 443.4 1002.25 554.25 1066.25 665.1 1002.25 775.95 1066.25 886.8 1002.25 886.83 874.25 997.65 810.25 997.68 682.25'"
+      />
+  </g>
 </svg>

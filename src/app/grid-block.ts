@@ -3,5 +3,4 @@ export class GridBlock {
     pos: number;
     x: number;
     y: number;
-    size: number;
 }
