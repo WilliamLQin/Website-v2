@@ -38,18 +38,19 @@ export class GridHomeComponent implements OnInit {
   deviceWidth: number;
   viewBox: string;
 
-  blockSize: number = 92;
+  blockSize: number = 100;
   svgBlockSize: number = 256;
   svgToGridRatio: number;
 
   mainHovering: boolean = false;
+  hoverTitle: string;
+  hoverDescription: string;
 
   layoutBlocks(): void {
     var blockWidth: number = this.blockSize;
     var blockHeight: number = this.blockSize;
 
     blockWidth *= this.sin60;
-    blockWidth -= 0.75;
 
     this.blocks = [];
     this.blocks = [{ring: 0, pos: 0, x: 0, y: 0}];
@@ -120,10 +121,13 @@ export class GridHomeComponent implements OnInit {
     this.mainHovering = true;
 
     if (index == -1) {
-      
+      this.hoverTitle = "About";
+      this.hoverDescription = "Welcome to my website!\nHover and click on any of the hexes to learn more about me!";
     }
     else {
       this.tiles[index].hovering = true;
+      this.hoverTitle = this.tiles[index].title;
+      this.hoverDescription = this.tiles[index].description;
     }
   }
 
@@ -143,7 +147,7 @@ export class GridHomeComponent implements OnInit {
       console.log("about");
     }
     else {
-      console.log(this.tiles[index].name);
+      console.log(this.tiles[index].title);
     }
   }
 

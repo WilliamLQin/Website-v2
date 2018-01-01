@@ -1,11 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+/* Quicksand Font */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+
 html {
     background-color: #000;
     color: #FFF;
     overflow: hidden;
+    font-family: 'Quicksand', sans-serif;
 }
 
 body {
     margin: 0;
     padding: 0;
+}
+
+pre {
+    font-family: 'Quicksand', sans-serif;
 }

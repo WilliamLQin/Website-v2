@@ -18,7 +18,22 @@
     margin-top: calc(-12px); */
 }
 
-g.tile {
+.main-title {
     position: absolute;
-    text-align: center;
+
+    left: 0;
+    width: 100%;
+    top: 25%;
+}
+
+.main-description {
+    position: absolute;
+
+    left: 0;
+    width: 60%;
+    padding: 0 20%;
+    top: 50%;
+
+    white-space: pre-line;
+    font-size: 14px;
 }
