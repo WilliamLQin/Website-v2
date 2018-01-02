@@ -5,8 +5,8 @@ import { RedirectComponent } from './redirect/redirect.component';
 import { InfoViewComponent } from './info-view/info-view.component';
 
 const routes: Routes = [
-  { path: 'resume', component: RedirectComponent, data: {url: "/assets/downloads/WilliamQin-Resume.pdf"} },
-  { path: 'about', component: InfoViewComponent, data: {htmlPath: "/assets/pages/about.html", fillColor: "rgb(230, 255, 230)"} }
+  { path: 'resume', component: RedirectComponent, data: {url: "../assets/downloads/WilliamQin-Resume.pdf"} },
+  { path: 'about', component: InfoViewComponent, data: {htmlPath: "../assets/pages/about.html", fillColor: "rgb(230, 255, 230)"} }
 ];2
 
 

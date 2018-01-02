@@ -20,7 +20,7 @@ import { Router } from '@angular/router';
 })
 export class InfoViewComponent implements OnInit {
 
-  private myTemplate: any = "";
+  myTemplate: any = "";
 
   viewOffset: number = 40;
   boxRounding: number = 50;
