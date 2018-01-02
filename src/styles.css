@@ -5,6 +5,9 @@ html {
     background-color: #000;
     color: #FFF;
     overflow: hidden;
+}
+
+html * {
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -14,6 +17,6 @@ body {
     overflow: hidden;
 }
 
-pre {
-    font-family: 'Quicksand', sans-serif;
+h1.view-title {
+    margin-top: 10px;
 }

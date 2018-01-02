@@ -6,10 +6,10 @@ export class Animations {
             state('*', style({transform: 'translateY(0)', opacity: 1})),
             transition('void => *', [
                 style({transform: 'translateY(5%)', opacity: 0}),
-                animate('300ms cubic-bezier(0.215, 0.610, 0.355, 1.000)')
+                animate('150ms')
             ]),
             transition('* => void', [
-                animate('300ms cubic-bezier(0.215, 0.610, 0.355, 1.000)', 
+                animate('150ms', 
                     style({transform: 'translateY(5%)', opacity: 0})
                 )
             ])

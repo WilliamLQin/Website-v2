@@ -24,6 +24,8 @@ export class InfoViewComponent implements OnInit {
   viewOffset: number = 20;
   boxRounding: number = 60;
 
+  fillColor: string = "fill:white";
+
   deviceWidth: number;
   deviceHeight: number;
 
@@ -34,13 +36,16 @@ export class InfoViewComponent implements OnInit {
 
     this.route.data
       .subscribe(data => {
-        var url: string = Object.keys(data).map(key => data[key])[0];
+        var parseData = Object.keys(data).map(key => data[key])
+        var url: string = parseData[0];
         this.http.get(url, {responseType: 'text'})
         .subscribe(
           (data: string) => {
             this.myTemplate = data;
           }
         )
+
+        this.fillColor = parseData[1];
       });
 
     

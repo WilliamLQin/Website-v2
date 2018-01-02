@@ -18,26 +18,27 @@
     margin-top: calc(-12px); */
 }
 
-.main-title {
+h1.main-title {
     position: absolute;
 
     left: 0;
     width: 100%;
     top: 22%;
 
-    font-size: 36px;
+    color: #ffffff;
 }
 
-.main-description {
+div.main-description {
     position: absolute;
 
     left: 0;
-    width: 60%;
+    width: 100%;
     padding: 0 20%;
     top: 50%;
 
     white-space: pre-line;
-    font-size: 16px;
+
+    color: #ffffff;
 }
 
 .transition-info-view {

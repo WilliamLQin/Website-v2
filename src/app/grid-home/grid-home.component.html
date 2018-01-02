@@ -8,7 +8,7 @@
     'height': 'calc(' + (blockSize) + 'px)'
   }" 
   class="block-container">
-    <img class="block" src="/assets/img/Base Hexes/Hex_{{block.color}} Hex.svg"/> 
+    <img class="block" src="/assets/hex/Base Hexes/Hex_{{block.color}} Hex.svg"/> 
   </div>
 
 </div>
@@ -22,7 +22,7 @@
   }"
   class="block-container">
 
-  <img class="block" src="/assets/img/Main Hexes/Hex_Portrait Main.png"/>
+  <img class="block" src="/assets/hex/Main Hexes/Hex_Portrait Main.png"/>
 
 </div>
 
@@ -77,16 +77,16 @@
   }"
   class="block-container">
 
-  <img class="block" src="/assets/img/Main Hexes/Hex_Main Hex Border.png"/>
+  <img class="block" src="/assets/hex/Main Hexes/Hex_Main Hex Border.png"/>
 
   <div *ngIf="mainHovering" [@main-overlay-animation]>
-    <img class="block" src="/assets/img/Overlay Hexes/Hex_Overlay Hex Size 5.svg"/>
+    <img class="block" src="/assets/hex/Overlay Hexes/Hex_Overlay Hex Size 5.svg"/>
     <h1 class="main-title">
       {{ hoverTitle }}
     </h1>
-    <pre class="main-description">
-      {{ hoverDescription }}
-    </pre>
+    <div class="main-description" [innerHTML]=hoverDescription>
+
+    </div>
   </div>
 
 </div>
