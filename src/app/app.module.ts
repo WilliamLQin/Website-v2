@@ -10,6 +10,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { RedirectComponent } from './redirect/redirect.component';
 import { InfoViewComponent } from './info-view/info-view.component';
 import { Animations } from './animations';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { Animations } from './animations';
     InfoViewComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule

@@ -6,7 +6,7 @@ import { InfoViewComponent } from './info-view/info-view.component';
 
 const routes: Routes = [
   { path: 'resume', component: RedirectComponent, data: {url: "/assets/downloads/WilliamQin-Resume.pdf"} },
-  { path: 'about', component: InfoViewComponent, data: {htmlPath: "./pages/about.html"} }
+  { path: 'about', component: InfoViewComponent, data: {htmlPath: "/assets/pages/about.html"} }
 ];
 
 
