@@ -3,6 +3,7 @@ import { Animations } from '../animations';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-info-view',
@@ -21,15 +22,15 @@ export class InfoViewComponent implements OnInit {
 
   private myTemplate: any = "";
 
-  viewOffset: number = 20;
-  boxRounding: number = 60;
+  viewOffset: number = 40;
+  boxRounding: number = 50;
 
   fillColor: string = "fill:white";
 
   deviceWidth: number;
   deviceHeight: number;
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.createView();
@@ -58,6 +59,10 @@ export class InfoViewComponent implements OnInit {
   createView() {
     this.deviceWidth = window.innerWidth;
     this.deviceHeight = window.innerHeight;
+  }
+
+  exit() {
+    this.router.navigate(["/"]);
   }
 
 }

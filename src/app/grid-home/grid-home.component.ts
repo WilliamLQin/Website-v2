@@ -13,8 +13,6 @@ import { Animations } from '../animations';
 })
 export class GridHomeComponent implements OnInit {
 
-  private router: Router;
-
   sin60: number = Math.sqrt(3)/2;
 
   blocks: GridBlock[];
@@ -105,9 +103,7 @@ export class GridHomeComponent implements OnInit {
     this.layoutBlocks();
   }
 
-  constructor(r: Router) {
-    this.router = r;
-  }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.createGrid();

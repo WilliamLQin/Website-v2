@@ -20,3 +20,21 @@ body {
 h1.view-title {
     margin-top: 10px;
 }
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.info-view-content h5.paragraphs {
+    line-height: 1.5;
+}
+
+div.row {
+    margin: 0;
+}
+
+h5.credits {
+    position: absolute;
+    bottom: 1rem;
+}
