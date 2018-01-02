@@ -1,15 +1,27 @@
 <div class="info-view" [@routeAnimation]>
 
-  <svg width="100%" height="100%">
+  <svg [ngStyle]=
+  "{
+    'width': 'calc(' + (deviceWidth) + 'px)',
+    'height': 'calc(' + (deviceHeight) + 'px)'
+  }">
     <defs>
-      <filter id="f1" x="0" y="0" width="200%" height="200%">
+      <filter [ngStyle]=
+      "{
+        'width': 'calc(' + (2 * deviceWidth) + 'px)',
+        'height': 'calc(' + (2 * deviceHeight) + 'px)'
+      }" id="f1" x="0" y="0">
         <feOffset result="offOut" in="SourceAlpha" [attr.dx]="15" [attr.dy]="15" />
         <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="10" />
         <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
       </filter>
     </defs>
-    
-    <rect width="100%" height="100%" fill="transparent" (click)="exit()"/>
+
+    <rect [ngStyle]=
+    "{
+      'width': 'calc(' + (deviceWidth) + 'px)',
+      'height': 'calc(' + (deviceHeight) + 'px)'
+    }" fill="transparent" (click)="exit()"/>
 
     <rect [ngStyle]=
     "{
