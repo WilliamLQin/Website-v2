@@ -26,6 +26,8 @@ export class GridHomeComponent implements OnInit {
   svgBlockSize: number = 256;
   svgToGridRatio: number;
 
+  mainPath: string = "../assets/hex/Main Hexes/Hex_Portrait Main.png";
+  currentMainPath: string = "";
   mainHovering: boolean = false;
   hoverTitle: string;
   hoverDescription: string;
@@ -108,6 +110,7 @@ export class GridHomeComponent implements OnInit {
 
   ngOnInit() {
     this.title.setTitle("William Qin");
+    this.currentMainPath = this.mainPath;
     this.createGrid();
   }
 
@@ -119,24 +122,25 @@ export class GridHomeComponent implements OnInit {
     this.mainHovering = true;
 
     if (index == -1) {
+      this.currentMainPath = this.mainPath;
       this.hoverTitle = "About";
       this.hoverDescription = "Welcome to my website!\nHover and click on any of the hexes to learn more about me!";
     }
     else {
       this.tiles[index].hovering = true;
+      this.currentMainPath = this.tiles[index].mainPath;
       this.hoverTitle = this.tiles[index].title;
       this.hoverDescription = this.tiles[index].description;
     }
   }
 
   onTileLeave(index: number) {
-    this.mainHovering = false;
-
     if (index == -1) {
-      
+      this.mainHovering = false;
     }
     else {
       this.tiles[index].hovering = false;
+      // this.currentMainPath = this.mainPath;
     }
   }
 

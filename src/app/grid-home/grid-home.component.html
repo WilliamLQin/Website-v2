@@ -14,7 +14,7 @@
 </div>
 
 <!-- Lower Main -->
-<div [ngStyle]=
+<!-- <div [ngStyle]=
   "{
     'transform': 'translate(calc(' + (5 * sin60 * -blockSize/2) + 'px), calc(' + (5 * sin60 * -blockSize/2) + 'px))',
     'width': 'calc(' + (5 * sin60 * blockSize) + 'px)',
@@ -23,6 +23,61 @@
   class="block-container">
 
   <img class="block" src="../assets/hex/Main Hexes/Hex_Portrait Main.png"/>
+
+</div> -->
+
+<!-- Lower Main Optimized -->
+<svg class="block" [attr.viewBox]="viewBox">
+  <g [ngStyle]=
+  "{
+    'transform': 'translate(
+      calc(' + ((5 * sin60 * -blockSize/2 + (deviceWidth/2)) * svgToGridRatio) + 'px), 
+      calc(' + ((5 * sin60 * -blockSize/2 + (deviceHeight/2)) * svgToGridRatio) + 'px))'
+  }">
+    <defs>
+      <pattern id="mainpattern" x="0" y="0" width="1" height="1">
+        <image width="1108.5" height="1108.5"
+          [attr.xlink:href]="currentMainPath" />
+      </pattern>
+      <pattern id="mainbg" x="0" y="0" width="1" height="1">
+        <image width="1108.5" height="1108.5"
+          [attr.xlink:href]="mainPath" />
+      </pattern>
+    </defs>
+    <polygon
+    style="fill:url(#mainbg)"
+    [attr.points]="'997.68 682.25 1108.5 618.25 1108.5 490.25 997.68 426.25 997.65 298.25 886.85 234.25 886.8 106.25 775.95 42.25 665.1 106.25 554.25 42.25 443.4 106.25 332.55 42.25 221.7 106.25 221.7 234.25 110.85 298.25 110.85 426.25 -0.01 490.25 -0.01 618.25 110.85 682.25 110.85 810.25 221.7 874.25 221.7 1002.25 332.55 1066.25 443.4 1002.25 554.25 1066.25 665.1 1002.25 775.95 1066.25 886.8 1002.25 886.83 874.25 997.65 810.25 997.68 682.25'"
+    />
+    <polygon *ngIf="mainHovering" [@main-overlay-animation]
+    style="fill:url(#mainpattern)"
+    [attr.points]="'997.68 682.25 1108.5 618.25 1108.5 490.25 997.68 426.25 997.65 298.25 886.85 234.25 886.8 106.25 775.95 42.25 665.1 106.25 554.25 42.25 443.4 106.25 332.55 42.25 221.7 106.25 221.7 234.25 110.85 298.25 110.85 426.25 -0.01 490.25 -0.01 618.25 110.85 682.25 110.85 810.25 221.7 874.25 221.7 1002.25 332.55 1066.25 443.4 1002.25 554.25 1066.25 665.1 1002.25 775.95 1066.25 886.8 1002.25 886.83 874.25 997.65 810.25 997.68 682.25'"
+    />
+    <polygon *ngIf="mainHovering" [@main-overlay-animation]
+    style="fill:rgba(0,0,0,0.7)"
+    [attr.points]="'997.68 682.25 1108.5 618.25 1108.5 490.25 997.68 426.25 997.65 298.25 886.85 234.25 886.8 106.25 775.95 42.25 665.1 106.25 554.25 42.25 443.4 106.25 332.55 42.25 221.7 106.25 221.7 234.25 110.85 298.25 110.85 426.25 -0.01 490.25 -0.01 618.25 110.85 682.25 110.85 810.25 221.7 874.25 221.7 1002.25 332.55 1066.25 443.4 1002.25 554.25 1066.25 665.1 1002.25 775.95 1066.25 886.8 1002.25 886.83 874.25 997.65 810.25 997.68 682.25'"
+    />
+  </g>
+</svg>
+
+<!-- Upper Main -->
+<div [ngStyle]=
+  "{
+    'transform': 'translate(calc(' + (5 * sin60 * -blockSize/2) + 'px), calc(' + (5 * sin60 * -blockSize/2) + 'px))',
+    'width': 'calc(' + (5 * sin60 * blockSize) + 'px)',
+    'height': 'calc(' + (5 * sin60 * blockSize) + 'px)'
+  }"
+  class="block-container">
+
+  <img class="block" src="../assets/hex/Main Hexes/Main_HexBorder.png"/>
+
+  <div *ngIf="mainHovering" [@main-overlay-animation]>
+    <h1 class="main-title">
+      {{ hoverTitle }}
+    </h1>
+    <div class="main-description" [innerHTML]=hoverDescription>
+
+    </div>
+  </div>
 
 </div>
 
@@ -45,14 +100,20 @@
       <img class="block" src={{tile.imagePath}}/>
     </div>
     <!-- Overlay -->
-    <div *ngIf="tile.hovering" [@main-overlay-animation]  id="{{tile.name}}-overlay">
+    <!-- <div *ngIf="tile.hovering" [@main-overlay-animation]  id="{{tile.name}}-overlay">
       <img class="block" src={{tile.hoverPath}}/>
-    </div>
+    </div> -->
+    <svg class="block" [attr.viewBox]="'0 0 '  + ((tile.size) * (tile.size > 2 ? (sin60 * blockSize) : (blockSize)) * svgToGridRatio) + ' '
+        + ((tile.size) * (tile.size > 2 ? (sin60 * blockSize) : (blockSize)) * svgToGridRatio)">
+      <polygon *ngIf="tile.hovering" [@main-overlay-animation]
+      style="fill:rgba(255,255,255,0.5)"
+      [attr.points]="tile.svgPoints" />
+    </svg>
 
   </div>
 
-  <!-- Main Image -->
-  <div [ngStyle]=
+  <!-- Main Image (deprecated) -->
+  <!-- <div [ngStyle]=
   "{
     'transform': 'translate(calc(' + (5 * sin60 * -blockSize/2) + 'px), calc(' + (5 * sin60 * -blockSize/2) + 'px))',
     'width': 'calc(' + (5 * sin60 * blockSize) + 'px)',
@@ -64,35 +125,16 @@
       <img class="block" src={{tile.mainPath}}/>
     </div>
 
-  </div>
-
-</div>
-
-<!-- Upper Main -->
-<div [ngStyle]=
-  "{
-    'transform': 'translate(calc(' + (5 * sin60 * -blockSize/2) + 'px), calc(' + (5 * sin60 * -blockSize/2) + 'px))',
-    'width': 'calc(' + (5 * sin60 * blockSize) + 'px)',
-    'height': 'calc(' + (5 * sin60 * blockSize) + 'px)'
-  }"
-  class="block-container">
-
-  <img class="block" src="../assets/hex/Main Hexes/Hex_Main Hex Border.png"/>
-
-  <div *ngIf="mainHovering" [@main-overlay-animation]>
-    <img class="block" src="../assets/hex/Overlay Hexes/Hex_Overlay Hex Size 5.svg"/>
-    <h1 class="main-title">
-      {{ hoverTitle }}
-    </h1>
-    <div class="main-description" [innerHTML]=hoverDescription>
-
-    </div>
-  </div>
+  </div> -->
 
 </div>
 
 <!-- Tile click area -->
 <svg class="block" [attr.viewBox]="viewBox">
+  <g>
+    <rect (mouseover)="onTileLeave(-1)"
+    style="fill:rgba(0,0,0,0)" x=0 y=0 [attr.width]="deviceWidth * svgToGridRatio" [attr.height]="deviceHeight * svgToGridRatio"/>
+  </g>
   <g *ngFor="let tile of tiles" [ngStyle]=
   "{
     'transform': 'translate(
@@ -113,7 +155,7 @@
       calc(' + ((5 * sin60 * -blockSize/2 + (deviceHeight/2)) * svgToGridRatio) + 'px))'
   }"
   (click)="onTileClick(-1)">
-    <polygon (mouseover)="onTileHover(-1)" (mouseleave)="onTileLeave(-1)"
+    <polygon (mouseover)="onTileHover(-1)"
       style="fill:rgba(0,0,0,0)" cursor="pointer"
       [attr.points]="'997.68 682.25 1108.5 618.25 1108.5 490.25 997.68 426.25 997.65 298.25 886.85 234.25 886.8 106.25 775.95 42.25 665.1 106.25 554.25 42.25 443.4 106.25 332.55 42.25 221.7 106.25 221.7 234.25 110.85 298.25 110.85 426.25 -0.01 490.25 -0.01 618.25 110.85 682.25 110.85 810.25 221.7 874.25 221.7 1002.25 332.55 1066.25 443.4 1002.25 554.25 1066.25 665.1 1002.25 775.95 1066.25 886.8 1002.25 886.83 874.25 997.65 810.25 997.68 682.25'"
       />
