@@ -26,7 +26,7 @@ export class GridHomeComponent implements OnInit {
   svgBlockSize: number = 256;
   svgToGridRatio: number;
 
-  mainPath: string = "../assets/hex/Main Hexes/Hex_Portrait Main.png";
+  mainPath: string = "../assets/hex/Main Images/Main_Portrait-min.jpg";
   currentMainPath: string = "";
   mainHovering: boolean = false;
   hoverTitle: string;
