@@ -33,8 +33,8 @@
   <div [ngStyle]=
   "{
     'transform': 'translate(
-      calc(' + ((tile.size) * (tile.size > 2 ? (sin60 * -blockSize/2) : (-blockSize/2)) + tile.x * sin60 * blockSize) + 'px), 
-      calc(' + ((tile.size) * (tile.size > 2 ? (sin60 * -blockSize/2) : (-blockSize/2)) + tile.y * blockSize) + 'px))',
+      calc(' + ((tile.size) * (tile.size > 2 ? (sin60 * -blockSize/2) : (-blockSize/2)) + (tile.column) * sin60 * blockSize) + 'px), 
+      calc(' + ((tile.size) * (tile.size > 2 ? (sin60 * -blockSize/2) : (-blockSize/2)) + (tile.row * 0.75) * blockSize) + 'px))',
     'width': 'calc(' + ((tile.size) * (tile.size > 2 ? (sin60 * blockSize) : (blockSize))) + 'px)',
     'height': 'calc(' + ((tile.size) * (tile.size > 2 ? (sin60 * blockSize) : (blockSize))) + 'px)'
   }"
@@ -96,8 +96,8 @@
   <g *ngFor="let tile of tiles" [ngStyle]=
   "{
     'transform': 'translate(
-      calc(' + ((tile.size * (tile.size > 2 ? (sin60 * -blockSize/2) : (-blockSize/2)) + tile.x * sin60 * blockSize + (deviceWidth/2)) * svgToGridRatio) + 'px), 
-      calc(' + ((tile.size * (tile.size > 2 ? (sin60 * -blockSize/2) : (-blockSize/2)) + tile.y * blockSize + (deviceHeight/2)) * svgToGridRatio) + 'px))'
+      calc(' + ((tile.size * (tile.size > 2 ? (sin60 * -blockSize/2) : (-blockSize/2)) + (tile.column) * sin60 * blockSize + (deviceWidth/2)) * svgToGridRatio) + 'px), 
+      calc(' + ((tile.size * (tile.size > 2 ? (sin60 * -blockSize/2) : (-blockSize/2)) + (tile.row * 0.75) * blockSize + (deviceHeight/2)) * svgToGridRatio) + 'px))'
   }"
   (click)="onTileClick(tile.index)">
 

@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-info-view',
@@ -18,19 +20,22 @@ import { Router } from '@angular/router';
   },
   animations: Animations.infoView
 })
-export class InfoViewComponent implements OnInit {
+export class InfoViewComponent implements OnInit, OnDestroy {
 
   myTemplate: any = "";
 
   viewOffset: number = 40;
   boxRounding: number = 50;
+  exitRectThickness: number = 15;
+  circleOffset: number = 10;
+  circleSize: number = 38;
 
   fillColor: string = "fill:white";
 
   deviceWidth: number;
   deviceHeight: number;
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private title: Title) { }
 
   ngOnInit() {
     this.createView();
@@ -48,8 +53,10 @@ export class InfoViewComponent implements OnInit {
 
         this.fillColor = parseData[1];
       });
+  }
 
-    
+  ngOnDestroy() {
+    this.title.setTitle("William Qin");
   }
 
   @HostListener('window:resize') onResize() {

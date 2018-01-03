@@ -31,6 +31,39 @@
     }"
     [attr.rx]="boxRounding" [attr.ry]="boxRounding" 
     [attr.fill]="fillColor" filter="url(#f1)" />
+
+    <defs>
+      <filter [ngStyle]=
+      "{
+        'width': 'calc(' + (2 * deviceWidth) + 'px)',
+        'height': 'calc(' + (2 * deviceHeight) + 'px)'
+      }" id="f2" x="0" y="0">
+        <feOffset result="offOut" in="SourceAlpha" [attr.dx]="0" [attr.dy]="0" />
+        <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="5" />
+        <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+      </filter>
+    </defs>
+    <g cursor="pointer" (click)="exit()">
+      <circle [attr.cx]="circleSize + circleOffset" [attr.cy]="circleSize + circleOffset" [attr.r]="circleSize" 
+        fill="rgba(0,0,0,0.7)" filter="url(#f2)"/>
+      <rect [ngStyle]=
+      "{
+        'width': 'calc(' + (circleSize*2 - 2*exitRectThickness) + 'px)',
+        'height': 'calc(' + (exitRectThickness) + 'px)'
+      }"
+        [attr.x]="circleOffset + exitRectThickness" [attr.y]="circleSize + circleOffset - exitRectThickness/2"
+        fill="white" [attr.transform]="'rotate(45 '+(circleSize + circleOffset)+' '+(circleSize + circleOffset)+')'" />
+      <rect [ngStyle]=
+      "{
+        'width': 'calc(' + (circleSize*2 - 2*exitRectThickness) + 'px)',
+        'height': 'calc(' + (exitRectThickness) + 'px)'
+      }"
+        [attr.x]="circleOffset + exitRectThickness" [attr.y]="circleSize + circleOffset - exitRectThickness/2"
+        fill="white" [attr.transform]="'rotate(-45 '+(circleSize + circleOffset)+' '+(circleSize + circleOffset)+')'" />
+    </g>
+    
+
+
   </svg>
 
   

@@ -4,6 +4,7 @@ import { GridTile, TILES } from '../grid-tile';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router } from '@angular/router';
 import { Animations } from '../animations';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-grid-home',
@@ -103,9 +104,10 @@ export class GridHomeComponent implements OnInit {
     this.layoutBlocks();
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private title:Title) { }
 
   ngOnInit() {
+    this.title.setTitle("William Qin");
     this.createGrid();
   }
 
@@ -140,9 +142,11 @@ export class GridHomeComponent implements OnInit {
 
   onTileClick(index: number) {
     if (index == -1) {
+      this.title.setTitle("William Qin | About");
       this.router.navigate(['/about']);
     }
     else {
+      this.title.setTitle("William Qin" + this.tiles[index].tabTitle);
       this.router.navigate([this.tiles[index].targetURL]);
     }
   }
