@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'plant', component: InfoViewComponent, data: {htmlPath: "../assets/pages/plant.html", fillColor: "rgb(255, 255, 230)"} },
   { path: 'visionmotion', component: InfoViewComponent, data: {htmlPath: "../assets/pages/vision-motion.html", fillColor: "rgb(255, 230, 255)"} },
 
-  { path: 'email', component: NewtabComponent, data: {url: "mailto:hello@williamqin.com"} },
+  { path: 'email', component: RedirectComponent, data: {url: "mailto:hello@williamqin.com"} },
   { path: 'github', component: NewtabComponent, data: {url: "https://github.com/WilliamLQin"} },
   { path: 'linkedin', component: NewtabComponent, data: {url: "https://www.linkedin.com/in/williamqin"} },
   { path: 'devpost', component: NewtabComponent, data: {url: "https://devpost.com/williamqin"} }
