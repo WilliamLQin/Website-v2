@@ -21,7 +21,7 @@ import { Animations } from './animations';
     GridHomeComponent,
     InfoViewComponent,
     RedirectComponent,
-    NewtabComponent
+    NewtabComponent 
   ],
   imports: [
     HttpClientModule,

@@ -113,8 +113,8 @@ export const TILES: GridTile[] = [
     },
     {
         index: 6,
-        column: -1.25,
-        row: -4.5,
+        column: -0.75,
+        row: -5.5,
         size: 2.5,
         svgPoints: hexSizeTwopFiveSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_Awards.svg",
@@ -125,7 +125,40 @@ export const TILES: GridTile[] = [
         tabTitle: " | Awards",
         targetURL: "awards",
         hovering: false
+    },
+
+    {
+        index: 7,
+        column: 3.5,
+        row: -1,
+        size: 3,
+        svgPoints: hexSizeThreeSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_Plant.svg",
+        hoverPath: "../assets/hex/Overlay Hexes/Hex_Overlay Hex Size 3.svg",
+        mainPath: "../assets/hex/Main Hexes/Hex_Plant Main.png",
+        title: "Plant",
+        description: "Rapid tower defense game with freedom of placement and movement.\nCurrently in development!",
+        tabTitle: " | Plant",
+        targetURL: "plant",
+        hovering: false
+    },
+    {
+        index: 8,
+        column: -3,
+        row: -2,
+        size: 3,
+        svgPoints: hexSizeThreeSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_VisionMotion.svg",
+        hoverPath: "../assets/hex/Overlay Hexes/Hex_Overlay Hex Size 3.svg",
+        mainPath: "../assets/hex/Main Hexes/Hex_VisionMotion Main.png",
+        title: "Vision Motion",
+        description: "Motion sensor mobile app that uses the camera to track an object and create a graph.",
+        tabTitle: " | Vision Motion",
+        targetURL: "visionmotion",
+        hovering: false
     }
+
+
 
     // {
     //     index: ,

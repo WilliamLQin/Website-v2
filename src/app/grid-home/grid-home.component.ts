@@ -22,7 +22,7 @@ export class GridHomeComponent implements OnInit {
   deviceWidth: number;
   viewBox: string;
 
-  blockSize: number = 92;
+  blockSize: number = 86;
   svgBlockSize: number = 256;
   svgToGridRatio: number;
 

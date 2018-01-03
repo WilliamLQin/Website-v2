@@ -13,6 +13,8 @@ const routes: Routes = [
   { path: 'resume', component: NewtabComponent, data: {url: "../assets/downloads/WilliamQin-Resume.pdf"} },
   { path: 'blog', component: NewtabComponent, data: {url: "http://blog.williamqin.com"} },
 
+  { path: 'plant', component: InfoViewComponent, data: {htmlPath: "../assets/pages/plant.html", fillColor: "rgb(255, 255, 230)"} },
+  { path: 'visionmotion', component: InfoViewComponent, data: {htmlPath: "../assets/pages/vision-motion.html", fillColor: "rgb(255, 230, 255)"} },
 
   { path: 'email', component: NewtabComponent, data: {url: "mailto:hello@williamqin.com"} },
   { path: 'github', component: NewtabComponent, data: {url: "https://github.com/WilliamLQin"} },
