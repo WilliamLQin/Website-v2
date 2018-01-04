@@ -5,7 +5,6 @@ export class GridTile {
     size: number; // number of tiles horizontally
     svgPoints: string;
     imagePath: string;
-    hoverPath: string;
     mainPath: string;
     title: string;
     description: string;
@@ -15,8 +14,9 @@ export class GridTile {
 }
 
 const hexSizeOneSVGPoints = '128 0 17.15 64 17.15 192 128 256 238.85 192 238.85 64 128 0';
-const hexSizeThreeSVGPoints = '554.2 204.53 554.2 76.5 443.35 12.5 332.5 76.5 221.65 12.5 110.8 76.5 110.8 204.53 -0.05 268.55 -0.05 396.55 110.8 460.51 110.8 588.5 221.65 652.5 332.5 588.5 443.35 652.5 554.2 588.5 554.2 460.52 665.05 396.55 665.05 268.55 554.2 204.53';
+const hexSizeTwoSVGPoints = '445.65 256 334.85 192 334.85 64 224 0 113.15 64 113.15 192 2.3 256 2.3 384 113.15 448 224 384 334.85 448 445.7 384 445.65 256';
 const hexSizeTwopFiveSVGPoints = '443.35 309.13 554.25 245.13 554.25 117.13 443.4 53.13 332.55 117.13 221.7 53.13 110.85 117.13 110.85 245.13 0 309.13 0 437.13 110.85 501.13 221.7 437.13 332.55 501.13 443.4 437.13 443.35 309.13';
+const hexSizeThreeSVGPoints = '554.2 204.53 554.2 76.5 443.35 12.5 332.5 76.5 221.65 12.5 110.8 76.5 110.8 204.53 -0.05 268.55 -0.05 396.55 110.8 460.51 110.8 588.5 221.65 652.5 332.5 588.5 443.35 652.5 554.2 588.5 554.2 460.52 665.05 396.55 665.05 268.55 554.2 204.53';
 const hexSizeFiveSVGPoints = '997.68 682.25 1108.5 618.25 1108.5 490.25 997.68 426.25 997.65 298.25 886.85 234.25 886.8 106.25 775.95 42.25 665.1 106.25 554.25 42.25 443.4 106.25 332.55 42.25 221.7 106.25 221.7 234.25 110.85 298.25 110.85 426.25 -0.01 490.25 -0.01 618.25 110.85 682.25 110.85 810.25 221.7 874.25 221.7 1002.25 332.55 1066.25 443.4 1002.25 554.25 1066.25 665.1 1002.25 775.95 1066.25 886.8 1002.25 886.83 874.25 997.65 810.25 997.68 682.25'
 
 export const TILES: GridTile[] = [
@@ -28,7 +28,6 @@ export const TILES: GridTile[] = [
         size: 1,
         svgPoints: hexSizeOneSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_Email.svg",
-        hoverPath: "../assets/hex/Overlay Hexes/Hex_Overlay Hex Size 1.svg",
         mainPath: "../assets/hex/Main Images/Main_Email-min.jpg",
         title: "Email",
         description: "Feel free to contact me.\nI look forward to\nhearing from you!",
@@ -43,7 +42,6 @@ export const TILES: GridTile[] = [
         size: 1,
         svgPoints: hexSizeOneSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_GitHub.svg",
-        hoverPath: "../assets/hex/Overlay Hexes/Hex_Overlay Hex Size 1.svg",
         mainPath: "../assets/hex/Main Images/Main_GitHub-min.jpg",
         title: "GitHub",
         description: "Visit my GitHub to download my projects and see how they were created!",
@@ -58,7 +56,6 @@ export const TILES: GridTile[] = [
         size: 1,
         svgPoints: hexSizeOneSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_LinkedIn.svg",
-        hoverPath: "../assets/hex/Overlay Hexes/Hex_Overlay Hex Size 1.svg",
         mainPath: "../assets/hex/Main Images/Main_LinkedIn-min.jpg",
         title: "LinkedIn",
         description: "Connect with me on LinkedIn!",
@@ -73,7 +70,6 @@ export const TILES: GridTile[] = [
         size: 1,
         svgPoints: hexSizeOneSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_Devpost.svg",
-        hoverPath: "../assets/hex/Overlay Hexes/Hex_Overlay Hex Size 1.svg",
         mainPath: "../assets/hex/Main Images/Main_Devpost-min.jpg",
         title: "Devpost",
         description: "View my hackathon projects on Devpost!",
@@ -88,7 +84,6 @@ export const TILES: GridTile[] = [
         size: 3,
         svgPoints: hexSizeThreeSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_Resume.svg",
-        hoverPath: "../assets/hex/Overlay Hexes/Hex_Overlay Hex Size 3.svg",
         mainPath: "../assets/hex/Main Images/Main_Resume-min.jpg",
         title: "Resume",
         description: "View my resume.",
@@ -103,7 +98,6 @@ export const TILES: GridTile[] = [
         size: 3,
         svgPoints: hexSizeThreeSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_Blog.svg",
-        hoverPath: "../assets/hex/Overlay Hexes/Hex_Overlay Hex Size 3.svg",
         mainPath: "../assets/hex/Main Images/Main_Blog-min.jpg",
         title: "Blog",
         description: "Come visit my blog,\n'The Thinking Rock'!",
@@ -118,7 +112,6 @@ export const TILES: GridTile[] = [
         size: 2.5,
         svgPoints: hexSizeTwopFiveSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_Awards.svg",
-        hoverPath: "../assets/hex/Overlay Hexes/Hex_Overlay Hex Size 2,5.svg",
         mainPath: "../assets/hex/Main Images/Main_Awards-min.jpg",
         title: "Awards",
         description: "View my awards, honours, and achievements.",
@@ -134,7 +127,6 @@ export const TILES: GridTile[] = [
         size: 3,
         svgPoints: hexSizeThreeSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_Plant.svg",
-        hoverPath: "../assets/hex/Overlay Hexes/Hex_Overlay Hex Size 3.svg",
         mainPath: "../assets/hex/Main Images/Main_Plant-min.jpg",
         title: "Plant",
         description: "Rapid tower defense game with freedom of placement and movement.\nCurrently in development!",
@@ -149,14 +141,70 @@ export const TILES: GridTile[] = [
         size: 3,
         svgPoints: hexSizeThreeSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_VisionMotion.svg",
-        hoverPath: "../assets/hex/Overlay Hexes/Hex_Overlay Hex Size 3.svg",
         mainPath: "../assets/hex/Main Images/Main_VisionMotion-min.jpg",
         title: "Vision Motion",
         description: "Motion sensor mobile app that uses the camera to track an object and create a graph.",
         tabTitle: " | Vision Motion",
         targetURL: "visionmotion",
         hovering: false
+    },
+    {
+        index: 9,
+        column: 5.25,
+        row: -2.5,
+        size: 2.5,
+        svgPoints: hexSizeTwopFiveSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_Fihgt.svg",
+        mainPath: "../assets/hex/Main Images/Main_Fihgt-min.jpg",
+        title: "Fihgt",
+        description: "A wacky and fun fighting game for two players!",
+        tabTitle: " | Fihgt",
+        targetURL: "fihgt",
+        hovering: false
+    },
+    {
+        index: 10,
+        column: -5.25,
+        row: -2.5,
+        size: 2.5,
+        svgPoints: hexSizeTwopFiveSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_CPR-VR.svg",
+        mainPath: "../assets/hex/Main Images/Main_CPR-VR-min.jpg",
+        title: "CPR-VR",
+        description: "Virtual reality simulator for basic CPR!",
+        tabTitle: " | CPR-VR",
+        targetURL: "cprvr",
+        hovering: false
+    },
+    {
+        index: 11,
+        column: -6.25,
+        row: -0.5,
+        size: 2.5,
+        svgPoints: hexSizeTwopFiveSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_ThinkTank.svg",
+        mainPath: "../assets/hex/Main Images/Main_ThinkTank-min.jpg",
+        title: "Think Tank",
+        description: "Control a tank with your brain by using a Muse headband!",
+        tabTitle: " | Think Tank",
+        targetURL: "thinktank",
+        hovering: false
+    },
+    {
+        index: 12,
+        column: -3.25,
+        row: 1.5,
+        size: 2.5,
+        svgPoints: hexSizeTwopFiveSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_Robotics.svg",
+        mainPath: "../assets/hex/Main Images/Main_Robotics-min.jpg",
+        title: "Robotics",
+        description: "I program robots and create apps for my FRC team!",
+        tabTitle: " | Robotics",
+        targetURL: "robotics",
+        hovering: false
     }
+    
 
 
 
@@ -167,7 +215,6 @@ export const TILES: GridTile[] = [
     //     size: ,
     //     svgPoints: ,
     //     imagePath: "../assets/hex/Icon Hexes/Hex_.svg",
-    //     hoverPath: "../assets/hex/Overlay Hexes/Hex_Overlay Hex Size .svg",
     //     mainPath: "../assets/hex/Main Images/Main_-min.jpg",
     //     title: ,
     //     description: ,
