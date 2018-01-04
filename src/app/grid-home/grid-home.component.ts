@@ -145,11 +145,11 @@ export class GridHomeComponent implements OnInit {
 
   onTileClick(index: number) {
     if (index == -1) {
-      this.title.setTitle("William Qin | About");
+      this.title.setTitle("About | William Qin");
       this.router.navigate(['/about']);
     }
     else {
-      this.title.setTitle("William Qin" + this.tiles[index].tabTitle);
+      this.title.setTitle(this.tiles[index].tabTitle + "William Qin");
       this.router.navigate([this.tiles[index].targetURL]);
     }
   }

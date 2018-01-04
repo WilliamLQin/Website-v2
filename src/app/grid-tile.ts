@@ -116,7 +116,7 @@ export const TILES: GridTile[] = [
         mainPath: "../assets/hex/Main Images/Main_Awards-min.jpg",
         title: "Awards",
         description: "View my awards, honours, and achievements.",
-        tabTitle: " | Awards",
+        tabTitle: "Awards | ",
         targetURL: "awards",
         hovering: false
     },
@@ -131,7 +131,7 @@ export const TILES: GridTile[] = [
         mainPath: "../assets/hex/Main Images/Main_Plant-min.jpg",
         title: "Plant",
         description: "Rapid tower defense game with freedom of placement and movement.\nCurrently in development!",
-        tabTitle: " | Plant",
+        tabTitle: "Plant | ",
         targetURL: "plant",
         hovering: false
     },
@@ -145,7 +145,7 @@ export const TILES: GridTile[] = [
         mainPath: "../assets/hex/Main Images/Main_Fihgt-min.jpg",
         title: "Fihgt",
         description: "A wacky and fun fighting game for two players!",
-        tabTitle: " | Fihgt",
+        tabTitle: "Fihgt | ",
         targetURL: "fihgt",
         hovering: false
     },
@@ -159,7 +159,7 @@ export const TILES: GridTile[] = [
         mainPath: "../assets/hex/Main Images/Main_VisionMotion-min.jpg",
         title: "Vision Motion",
         description: "Motion sensor mobile app that uses the camera to track an object and create a graph.",
-        tabTitle: " | Vision Motion",
+        tabTitle: "Vision Motion | ",
         targetURL: "visionmotion",
         hovering: false
     },
@@ -173,7 +173,7 @@ export const TILES: GridTile[] = [
         mainPath: "../assets/hex/Main Images/Main_CPR-VR-min.jpg",
         title: "CPR-VR",
         description: "Virtual reality simulator for basic CPR!",
-        tabTitle: " | CPR-VR",
+        tabTitle: "CPR-VR | ",
         targetURL: "cprvr",
         hovering: false
     },
@@ -187,7 +187,7 @@ export const TILES: GridTile[] = [
         mainPath: "../assets/hex/Main Images/Main_ThinkTank-min.jpg",
         title: "Think Tank",
         description: "Control a tank with your brain by using a Muse headband!",
-        tabTitle: " | Think Tank",
+        tabTitle: "Think Tank | ",
         targetURL: "thinktank",
         hovering: false
     },
@@ -201,7 +201,7 @@ export const TILES: GridTile[] = [
         mainPath: "../assets/hex/Main Images/Main_Talk2Control-min.jpg",
         title: "Talk2Control",
         description: "A web application that controls your screen using voice recognition!",
-        tabTitle: " | Talk2Control",
+        tabTitle: "Talk2Control | ",
         targetURL: "talk2control",
         hovering: false
     },
@@ -215,7 +215,7 @@ export const TILES: GridTile[] = [
         mainPath: "../assets/hex/Main Images/Main_PopMIDI-min.jpg",
         title: "Pop MIDI",
         description: "Pop can music box that can play any MIDI file!",
-        tabTitle: " | Pop MIDI",
+        tabTitle: "Pop MIDI | ",
         targetURL: "popmidi",
         hovering: false
     },
@@ -229,7 +229,7 @@ export const TILES: GridTile[] = [
         mainPath: "../assets/hex/Main Images/Main_Robotics-min.jpg",
         title: "Robotics",
         description: "I program robots and create apps for my FRC team!",
-        tabTitle: " | Robotics",
+        tabTitle: "Robotics | ",
         targetURL: "robotics",
         hovering: false
     },
@@ -243,7 +243,7 @@ export const TILES: GridTile[] = [
         mainPath: "../assets/hex/Main Images/Main_Lightboard-min.jpg",
         title: "Lightboard\nCreator",
         description: "<br>One of the major projects I worked on at D&R Electronics!",
-        tabTitle: " | Lightboard Creator",
+        tabTitle: "Lightboard Creator | ",
         targetURL: "lightboardcreator",
         hovering: false
     },
@@ -257,7 +257,7 @@ export const TILES: GridTile[] = [
         mainPath: "../assets/hex/Main Images/Main_SpaceJousting-min.jpg",
         title: "Space Jousting",
         description: "An action-packed two-player game where you try to strike your opponent at their weak spots!",
-        tabTitle: " | Space Jousting",
+        tabTitle: "Space Jousting | ",
         targetURL: "spacejousting",
         hovering: false
     },
@@ -271,7 +271,7 @@ export const TILES: GridTile[] = [
         mainPath: "../assets/hex/Main Images/Main_Stux-min.jpg",
         title: "Stux",
         description: "iOS block stacking and balancing game!",
-        tabTitle: " | Stux",
+        tabTitle: "Stux | ",
         targetURL: "stux",
         hovering: false
     },
@@ -285,7 +285,7 @@ export const TILES: GridTile[] = [
         mainPath: "../assets/hex/Main Images/Main_LaserField-min.jpg",
         title: "Laser Field",
         description: "iOS laser bounding and survival game!",
-        tabTitle: " | Laser Field",
+        tabTitle: "Laser Field | ",
         targetURL: "laserfield",
         hovering: false
     }

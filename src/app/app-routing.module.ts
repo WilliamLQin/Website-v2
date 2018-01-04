@@ -14,7 +14,19 @@ const routes: Routes = [
   { path: 'blog', component: NewtabComponent, data: {url: "http://blog.williamqin.com"} },
 
   { path: 'plant', component: InfoViewComponent, data: {htmlPath: "../assets/pages/plant.html", fillColor: "rgb(255, 255, 230)"} },
+  { path: 'fihgt', component: InfoViewComponent, data: {htmlPath: "../assets/pages/fihgt.html", fillColor: "rgb(230, 230, 230)"} },
+  { path: 'spacejousting', component: InfoViewComponent, data: {htmlPath: "../assets/pages/spacejousting.html", fillColor: "rgb(230, 230, 255)"} },
+  { path: 'stux', component: InfoViewComponent, data: {htmlPath: "../assets/pages/stux.html", fillColor: "rgb(230, 255, 255)"} },
+  { path: 'laserfield', component: InfoViewComponent, data: {htmlPath: "../assets/pages/laserfield.html", fillColor: "rgb(255, 230, 255)"} },
+
   { path: 'visionmotion', component: InfoViewComponent, data: {htmlPath: "../assets/pages/vision-motion.html", fillColor: "rgb(255, 230, 255)"} },
+  { path: 'talk2control', component: InfoViewComponent, data: {htmlPath: "../assets/pages/talk2control.html", fillColor: "rgb(230, 230, 255)"} },
+  { path: 'cprvr', component: InfoViewComponent, data: {htmlPath: "../assets/pages/cprvr.html", fillColor: "rgb(230, 230, 230)"} },
+  { path: 'thinktank', component: InfoViewComponent, data: {htmlPath: "../assets/pages/thinktank.html", fillColor: "rgb(230, 255, 230)"} },
+  { path: 'popmidi', component: InfoViewComponent, data: {htmlPath: "../assets/pages/popmidi.html", fillColor: "rgb(255, 255, 230)"} },
+
+  { path: 'robotics', component: InfoViewComponent, data: {htmlPath: "../assets/pages/robotics.html", fillColor: "rgb(255, 230, 230)"} },
+  { path: 'lightboardcreator', component: InfoViewComponent, data: {htmlPath: "../assets/pages/lightboardcreator.html", fillColor: "rgb(255, 245, 230)"} },
 
   { path: 'email', component: RedirectComponent, data: {url: "mailto:hello@williamqin.com"} },
   { path: 'github', component: NewtabComponent, data: {url: "https://github.com/WilliamLQin"} },
