@@ -24,7 +24,7 @@ export const TILES: GridTile[] = [
     
     {
         index: 0,
-        column: -1,
+        column: 0,
         row: 6,
         size: 1,
         svgPoints: hexSizeOneSVGPoints,
@@ -38,7 +38,7 @@ export const TILES: GridTile[] = [
     },
     {
         index: 1,
-        column: 0,
+        column: 1,
         row: 6,
         size: 1,
         svgPoints: hexSizeOneSVGPoints,
@@ -52,7 +52,7 @@ export const TILES: GridTile[] = [
     },
     {
         index: 2,
-        column: 0.5,
+        column: 1.5,
         row: 5,
         size: 1,
         svgPoints: hexSizeOneSVGPoints,
@@ -66,7 +66,7 @@ export const TILES: GridTile[] = [
     },
     {
         index: 3,
-        column: 1.5,
+        column: 2.5,
         row: 5,
         size: 1,
         svgPoints: hexSizeOneSVGPoints,
@@ -80,7 +80,7 @@ export const TILES: GridTile[] = [
     },
     {
         index: 4,
-        column: -1,
+        column: 0,
         row: 4,
         size: 3,
         svgPoints: hexSizeThreeSVGPoints,
@@ -137,22 +137,8 @@ export const TILES: GridTile[] = [
     },
     {
         index: 8,
-        column: -3,
-        row: -2,
-        size: 3,
-        svgPoints: hexSizeThreeSVGPoints,
-        imagePath: "../assets/hex/Icon Hexes/Hex_VisionMotion.svg",
-        mainPath: "../assets/hex/Main Images/Main_VisionMotion-min.jpg",
-        title: "Vision Motion",
-        description: "Motion sensor mobile app that uses the camera to track an object and create a graph.",
-        tabTitle: " | Vision Motion",
-        targetURL: "visionmotion",
-        hovering: false
-    },
-    {
-        index: 9,
-        column: 5.25,
-        row: -2.5,
+        column: 3.25,
+        row: 1.5,
         size: 2.5,
         svgPoints: hexSizeTwopFiveFlippedSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_Fihgt.svg",
@@ -164,9 +150,23 @@ export const TILES: GridTile[] = [
         hovering: false
     },
     {
+        index: 9,
+        column: -3,
+        row: 2,
+        size: 3,
+        svgPoints: hexSizeThreeSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_VisionMotion.svg",
+        mainPath: "../assets/hex/Main Images/Main_VisionMotion-min.jpg",
+        title: "Vision Motion",
+        description: "Motion sensor mobile app that uses the camera to track an object and create a graph.",
+        tabTitle: " | Vision Motion",
+        targetURL: "visionmotion",
+        hovering: false
+    },
+    {
         index: 10,
-        column: -5.25,
-        row: -2.5,
+        column: -5.75,
+        row: 2.5,
         size: 2.5,
         svgPoints: hexSizeTwopFiveSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_CPR-VR.svg",
@@ -179,8 +179,8 @@ export const TILES: GridTile[] = [
     },
     {
         index: 11,
-        column: -6.25,
-        row: -0.5,
+        column: -5.75,
+        row: 0.5,
         size: 2.5,
         svgPoints: hexSizeTwopFiveSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_ThinkTank.svg",
@@ -193,8 +193,8 @@ export const TILES: GridTile[] = [
     },
     {
         index: 12,
-        column: -5.5,
-        row: -4.5,
+        column: -4.5,
+        row: 3.5,
         size: 1.75,
         svgPoints: hexSizeTwoSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_Talk2Control.svg",
@@ -207,8 +207,22 @@ export const TILES: GridTile[] = [
     },
     {
         index: 13,
-        column: -3.25,
-        row: 1.5,
+        column: -6.5,
+        row: -1,
+        size: 1,
+        svgPoints: hexSizeOneSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_PopMIDI.svg",
+        mainPath: "../assets/hex/Main Images/Main_PopMIDI-min.jpg",
+        title: "Pop MIDI",
+        description: "Pop can music box that can play any MIDI file!",
+        tabTitle: " | Pop MIDI",
+        targetURL: "popmidi",
+        hovering: false
+    },
+    {
+        index: 14,
+        column: -2.75,
+        row: -1.5,
         size: 2.5,
         svgPoints: hexSizeTwopFiveSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_Robotics.svg",
@@ -220,9 +234,9 @@ export const TILES: GridTile[] = [
         hovering: false
     },
     {
-        index: 14,
-        column: -3.5,
-        row: 3,
+        index: 15,
+        column: -2.5,
+        row: -3,
         size: 1,
         svgPoints: hexSizeOneSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_Lightboard.svg",
@@ -231,6 +245,48 @@ export const TILES: GridTile[] = [
         description: "<br>One of the major projects I worked on at D&R Electronics!",
         tabTitle: " | Lightboard Creator",
         targetURL: "lightboardcreator",
+        hovering: false
+    },
+    {
+        index: 16,
+        column: 5,
+        row: 0.5,
+        size: 1.75,
+        svgPoints: hexSizeTwoSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_SpaceJousting.svg",
+        mainPath: "../assets/hex/Main Images/Main_SpaceJousting-min.jpg",
+        title: "Space Jousting",
+        description: "An action-packed two-player game where you try to strike your opponent at their weak spots!",
+        tabTitle: " | Space Jousting",
+        targetURL: "spacejousting",
+        hovering: false
+    },
+    {
+        index: 17,
+        column: 5.5,
+        row: -1,
+        size: 1,
+        svgPoints: hexSizeOneSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_Stux.svg",
+        mainPath: "../assets/hex/Main Images/Main_Stux-min.jpg",
+        title: "Stux",
+        description: "iOS block stacking and balancing game!",
+        tabTitle: " | Stux",
+        targetURL: "stux",
+        hovering: false
+    },
+    {
+        index: 18,
+        column: 6,
+        row: 0,
+        size: 1,
+        svgPoints: hexSizeOneSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_LaserField.svg",
+        mainPath: "../assets/hex/Main Images/Main_LaserField-min.jpg",
+        title: "Laser Field",
+        description: "iOS laser bounding and survival game!",
+        tabTitle: " | Laser Field",
+        targetURL: "laserfield",
         hovering: false
     }
     
