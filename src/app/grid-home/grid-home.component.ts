@@ -39,8 +39,7 @@ export class GridHomeComponent implements OnInit {
     blockWidth *= this.sin60;
 
     this.blocks = [];
-    this.blocks = [{ring: 0, pos: 0, x: 0, y: 0, color: "Blue"}];
-    var currRing: number = 0;
+    var currRing: number = 2;
     var currPos: number = 0;
     var currX: number = 0;
     var currY: number = 0;
