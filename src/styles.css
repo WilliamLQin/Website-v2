@@ -27,6 +27,11 @@ img {
     height: auto;
 }
 
+video {
+    width: 100%;
+    height: auto;
+}
+
 .info-view-content h5.paragraphs {
     line-height: 1.5;
 }
@@ -46,6 +51,12 @@ div.row {
 h5.credits {
     position: absolute;
     bottom: 1rem;
+}
+
+img.download-icon {
+    width: 80px;
+    height: auto;
+    display: inline;
 }
 
 
