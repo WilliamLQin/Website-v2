@@ -256,7 +256,7 @@ export const TILES: GridTile[] = [
         imagePath: "../assets/hex/Icon Hexes/Hex_SpaceJousting.svg",
         mainPath: "../assets/hex/Main Images/Main_SpaceJousting-min.jpg",
         title: "Space Jousting",
-        description: "An action-packed two-player game where you try to strike your opponent at their weak spots!",
+        description: "\nStrike your opponent at their weak spot in this two-player game!",
         tabTitle: "Space Jousting | ",
         targetURL: "spacejousting",
         hovering: false
