@@ -18,22 +18,23 @@
     margin-top: calc(-12px); */
 }
 
-h1.main-title {
+.main-title {
     position: absolute;
 
     left: 0;
     width: 100%;
+    padding: 0 15%;
     top: 25%;
 
     color: #ffffff;
 }
 
-div.main-description {
+.main-description {
     position: absolute;
 
     left: 0;
     width: 100%;
-    padding: 0 20%;
+    padding: 0 18%;
     top: 50%;
 
     white-space: pre-line;

@@ -20,9 +20,9 @@
   <img class="block" src="../assets/hex/Main Images/Main_HexBorder-min.png"/>
 
   <div *ngIf="mainHovering" [@main-overlay-animation]>
-    <h1 class="main-title">
-      {{ hoverTitle }}
-    </h1>
+    <div class="main-title">
+      <h1 [innerHTML]=hoverTitle></h1>
+    </div>
     <div class="main-description" [innerHTML]=hoverDescription>
 
     </div>
