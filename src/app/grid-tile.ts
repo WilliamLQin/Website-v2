@@ -22,10 +22,11 @@ const hexSizeFiveSVGPoints = '997.68 682.25 1108.5 618.25 1108.5 490.25 997.68 4
 
 export const TILES: GridTile[] = [
     
+    // Cluster Professional
     {
         index: 0,
-        column: 0,
-        row: 6,
+        column: -1,
+        row: -6,
         size: 1,
         svgPoints: hexSizeOneSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_Email.svg",
@@ -38,8 +39,8 @@ export const TILES: GridTile[] = [
     },
     {
         index: 1,
-        column: 1,
-        row: 6,
+        column: 0,
+        row: -6,
         size: 1,
         svgPoints: hexSizeOneSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_GitHub.svg",
@@ -52,8 +53,8 @@ export const TILES: GridTile[] = [
     },
     {
         index: 2,
-        column: 1.5,
-        row: 5,
+        column: 0.5,
+        row: -5,
         size: 1,
         svgPoints: hexSizeOneSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_LinkedIn.svg",
@@ -66,8 +67,8 @@ export const TILES: GridTile[] = [
     },
     {
         index: 3,
-        column: 2.5,
-        row: 5,
+        column: 1.5,
+        row: -5,
         size: 1,
         svgPoints: hexSizeOneSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_Devpost.svg",
@@ -80,8 +81,8 @@ export const TILES: GridTile[] = [
     },
     {
         index: 4,
-        column: 0,
-        row: 4,
+        column: -1,
+        row: -4,
         size: 3,
         svgPoints: hexSizeThreeSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_Resume.svg",
@@ -94,8 +95,24 @@ export const TILES: GridTile[] = [
     },
     {
         index: 5,
+        column: 0.5,
+        row: -3,
+        size: 1,
+        svgPoints: hexSizeOneSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_Lightboard.svg",
+        mainPath: "../assets/hex/Main Images/Main_Lightboard-min.jpg",
+        title: "Lightboard\nCreator",
+        description: "<br>One of the major projects I worked on at D&R Electronics!",
+        tabTitle: "Lightboard Creator | ",
+        targetURL: "lightboardcreator",
+        hovering: false
+    },
+
+    // Cluster Community
+    {
+        index: 6,
         column: 1,
-        row: -4,
+        row: 4,
         size: 3,
         svgPoints: hexSizeThreeSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_Blog.svg",
@@ -107,9 +124,9 @@ export const TILES: GridTile[] = [
         hovering: false
     },
     {
-        index: 6,
-        column: -0.75,
-        row: -5.5,
+        index: 7,
+        column: -1.25,
+        row: 3.5,
         size: 2.5,
         svgPoints: hexSizeTwopFiveSVGPoints,
         imagePath: "../assets/hex/Icon Hexes/Hex_Awards.svg",
@@ -120,9 +137,97 @@ export const TILES: GridTile[] = [
         targetURL: "awards",
         hovering: false
     },
-
     {
-        index: 7,
+        index: 8,
+        column: -0.75,
+        row: 5.5,
+        size: 2.5,
+        svgPoints: hexSizeTwopFiveFlippedSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_Robotics.svg",
+        mainPath: "../assets/hex/Main Images/Main_Robotics-min.jpg",
+        title: "Robotics",
+        description: "I program robots and create apps for my FRC team!",
+        tabTitle: "Robotics | ",
+        targetURL: "robotics",
+        hovering: false
+    },
+
+    // Cluster Projects
+    {
+        index: 9,
+        column: -3.5,
+        row: 1,
+        size: 3,
+        svgPoints: hexSizeThreeSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_VisionMotion.svg",
+        mainPath: "../assets/hex/Main Images/Main_VisionMotion-min.jpg",
+        title: "Vision Motion",
+        description: "Motion sensor mobile app that uses the camera to track an object and create a graph.",
+        tabTitle: "Vision Motion | ",
+        targetURL: "visionmotion",
+        hovering: false
+    },
+    {
+        index: 10,
+        column: -5.25,
+        row: -0.5,
+        size: 2.5,
+        svgPoints: hexSizeTwopFiveSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_CPR-VR.svg",
+        mainPath: "../assets/hex/Main Images/Main_CPR-VR-min.jpg",
+        title: "CPR-VR",
+        description: "Virtual reality simulator for basic CPR!",
+        tabTitle: "CPR-VR | ",
+        targetURL: "cprvr",
+        hovering: false
+    },
+    {
+        index: 11,
+        column: -3.25,
+        row: -1.5,
+        size: 2.5,
+        svgPoints: hexSizeTwopFiveFlippedSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_ThinkTank.svg",
+        mainPath: "../assets/hex/Main Images/Main_ThinkTank-min.jpg",
+        title: "Think Tank",
+        description: "Control a tank with your brain by using a Muse headband!",
+        tabTitle: "Think Tank | ",
+        targetURL: "thinktank",
+        hovering: false
+    },
+    {
+        index: 12,
+        column: -5.5,
+        row: 1.5,
+        size: 1.75,
+        svgPoints: hexSizeTwoSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_Talk2Control.svg",
+        mainPath: "../assets/hex/Main Images/Main_Talk2Control-min.jpg",
+        title: "Talk2Control",
+        description: "A web application that controls your screen using voice recognition!",
+        tabTitle: "Talk2Control | ",
+        targetURL: "talk2control",
+        hovering: false
+    },
+    {
+        index: 13,
+        column: -4.5,
+        row: 3,
+        size: 1,
+        svgPoints: hexSizeOneSVGPoints,
+        imagePath: "../assets/hex/Icon Hexes/Hex_PopMIDI.svg",
+        mainPath: "../assets/hex/Main Images/Main_PopMIDI-min.jpg",
+        title: "Pop MIDI",
+        description: "Pop can music box that can play any MIDI file!",
+        tabTitle: "Pop MIDI | ",
+        targetURL: "popmidi",
+        hovering: false
+    },
+
+
+    // Cluster Games
+    {
+        index: 14,
         column: 3.5,
         row: -1,
         size: 3,
@@ -136,7 +241,7 @@ export const TILES: GridTile[] = [
         hovering: false
     },
     {
-        index: 8,
+        index: 15,
         column: 3.25,
         row: 1.5,
         size: 2.5,
@@ -147,104 +252,6 @@ export const TILES: GridTile[] = [
         description: "A wacky and fun fighting game for two players!",
         tabTitle: "Fihgt | ",
         targetURL: "fihgt",
-        hovering: false
-    },
-    {
-        index: 9,
-        column: -3,
-        row: 2,
-        size: 3,
-        svgPoints: hexSizeThreeSVGPoints,
-        imagePath: "../assets/hex/Icon Hexes/Hex_VisionMotion.svg",
-        mainPath: "../assets/hex/Main Images/Main_VisionMotion-min.jpg",
-        title: "Vision Motion",
-        description: "Motion sensor mobile app that uses the camera to track an object and create a graph.",
-        tabTitle: "Vision Motion | ",
-        targetURL: "visionmotion",
-        hovering: false
-    },
-    {
-        index: 10,
-        column: -5.75,
-        row: 2.5,
-        size: 2.5,
-        svgPoints: hexSizeTwopFiveSVGPoints,
-        imagePath: "../assets/hex/Icon Hexes/Hex_CPR-VR.svg",
-        mainPath: "../assets/hex/Main Images/Main_CPR-VR-min.jpg",
-        title: "CPR-VR",
-        description: "Virtual reality simulator for basic CPR!",
-        tabTitle: "CPR-VR | ",
-        targetURL: "cprvr",
-        hovering: false
-    },
-    {
-        index: 11,
-        column: -5.75,
-        row: 0.5,
-        size: 2.5,
-        svgPoints: hexSizeTwopFiveSVGPoints,
-        imagePath: "../assets/hex/Icon Hexes/Hex_ThinkTank.svg",
-        mainPath: "../assets/hex/Main Images/Main_ThinkTank-min.jpg",
-        title: "Think Tank",
-        description: "Control a tank with your brain by using a Muse headband!",
-        tabTitle: "Think Tank | ",
-        targetURL: "thinktank",
-        hovering: false
-    },
-    {
-        index: 12,
-        column: -4.5,
-        row: 3.5,
-        size: 1.75,
-        svgPoints: hexSizeTwoSVGPoints,
-        imagePath: "../assets/hex/Icon Hexes/Hex_Talk2Control.svg",
-        mainPath: "../assets/hex/Main Images/Main_Talk2Control-min.jpg",
-        title: "Talk2Control",
-        description: "A web application that controls your screen using voice recognition!",
-        tabTitle: "Talk2Control | ",
-        targetURL: "talk2control",
-        hovering: false
-    },
-    {
-        index: 13,
-        column: -6.5,
-        row: -1,
-        size: 1,
-        svgPoints: hexSizeOneSVGPoints,
-        imagePath: "../assets/hex/Icon Hexes/Hex_PopMIDI.svg",
-        mainPath: "../assets/hex/Main Images/Main_PopMIDI-min.jpg",
-        title: "Pop MIDI",
-        description: "Pop can music box that can play any MIDI file!",
-        tabTitle: "Pop MIDI | ",
-        targetURL: "popmidi",
-        hovering: false
-    },
-    {
-        index: 14,
-        column: -2.75,
-        row: -1.5,
-        size: 2.5,
-        svgPoints: hexSizeTwopFiveSVGPoints,
-        imagePath: "../assets/hex/Icon Hexes/Hex_Robotics.svg",
-        mainPath: "../assets/hex/Main Images/Main_Robotics-min.jpg",
-        title: "Robotics",
-        description: "I program robots and create apps for my FRC team!",
-        tabTitle: "Robotics | ",
-        targetURL: "robotics",
-        hovering: false
-    },
-    {
-        index: 15,
-        column: -2.5,
-        row: -3,
-        size: 1,
-        svgPoints: hexSizeOneSVGPoints,
-        imagePath: "../assets/hex/Icon Hexes/Hex_Lightboard.svg",
-        mainPath: "../assets/hex/Main Images/Main_Lightboard-min.jpg",
-        title: "Lightboard\nCreator",
-        description: "<br>One of the major projects I worked on at D&R Electronics!",
-        tabTitle: "Lightboard Creator | ",
-        targetURL: "lightboardcreator",
         hovering: false
     },
     {

@@ -22,12 +22,7 @@ h1.view-title {
     margin-top: 10px;
 }
 
-img {
-    width: 100%;
-    height: auto;
-}
-
-video {
+img, video {
     width: 100%;
     height: auto;
 }

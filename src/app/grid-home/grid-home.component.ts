@@ -26,6 +26,9 @@ export class GridHomeComponent implements OnInit {
   svgBlockSize: number = 256;
   svgToGridRatio: number;
 
+  totalWidth: number = 256 * 13 + 50;
+  totalHeight: number = 256 * this.sin60 * 13 + 50;
+
   mainPath: string = "../assets/hex/Main Images/Main_Portrait-min.jpg";
   currentMainPath: string = "";
   mainHovering: boolean = false;
@@ -97,6 +100,21 @@ export class GridHomeComponent implements OnInit {
   createGrid() {
     this.deviceHeight = window.innerHeight;
     this.deviceWidth = window.innerWidth;
+
+    this.blockSize = 256;
+    if (this.deviceHeight < this.totalHeight) {
+      var temp = 256 * this.deviceHeight/this.totalHeight;
+      if (this.blockSize > temp) {
+        this.blockSize = temp;
+      }
+    }
+    if (this.deviceWidth < this.totalWidth) {
+      var temp = 256 * this.deviceWidth/this.totalWidth;
+      if (this.blockSize > temp) {
+        this.blockSize = temp;
+      }
+    }
+
 
     this.svgToGridRatio = this.svgBlockSize / this.blockSize;
 
