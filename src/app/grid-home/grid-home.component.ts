@@ -140,7 +140,7 @@ export class GridHomeComponent implements OnInit {
 
     if (index == -1) {
       this.currentMainPath = this.mainPath;
-      this.hoverTitle = "About";
+      this.hoverTitle = "<h1>About</h1>";
       this.hoverDescription = "Welcome to my website!\nHover and click on any of the hexes to learn more about me!";
     }
     else {
