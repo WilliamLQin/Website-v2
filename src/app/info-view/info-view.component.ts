@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-info-view',
@@ -35,7 +36,7 @@ export class InfoViewComponent implements OnInit, OnDestroy {
   deviceWidth: number;
   deviceHeight: number;
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private title: Title) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private title: Title, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.createView();
@@ -47,7 +48,7 @@ export class InfoViewComponent implements OnInit, OnDestroy {
         this.http.get(url, {responseType: 'text'})
         .subscribe(
           (data: string) => {
-            this.myTemplate = data;
+            this.myTemplate = this.sanitizer.bypassSecurityTrustHtml(data);
           }
         )
 
