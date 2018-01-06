@@ -26,8 +26,8 @@ export class GridHomeComponent implements OnInit {
   svgBlockSize: number = 256;
   svgToGridRatio: number;
 
-  totalWidth: number = 256 * 13 + 50;
-  totalHeight: number = 256 * this.sin60 * 13 + 50;
+  totalWidth: number = 256 * 12 + 20;
+  totalHeight: number = 256 * this.sin60 * 12 + 20;
 
   mainPath: string = "../assets/hex/Main Images/Main_Portrait-min.jpg";
   currentMainPath: string = "";
