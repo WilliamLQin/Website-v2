@@ -11,8 +11,6 @@ import { InfoViewComponent } from './info-view/info-view.component';
 import { RedirectComponent } from './redirect/redirect.component';
 import { NewtabComponent } from './redirect/newtab.component';
 
-import { Animations } from './animations';
-
 
 
 @NgModule({
@@ -21,7 +19,7 @@ import { Animations } from './animations';
     GridHomeComponent,
     InfoViewComponent,
     RedirectComponent,
-    NewtabComponent 
+    NewtabComponent
   ],
   imports: [
     HttpClientModule,
@@ -29,7 +27,6 @@ import { Animations } from './animations';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [Animations],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

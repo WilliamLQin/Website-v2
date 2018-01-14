@@ -3,14 +3,12 @@ import { GridBlock } from '../grid-block';
 import { GridTile, TILES } from '../grid-tile';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router } from '@angular/router';
-import { Animations } from '../animations';
 import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-grid-home',
   templateUrl: './grid-home.component.html',
-  styleUrls: ['./grid-home.component.css'],
-  animations: Animations.gridHome
+  styleUrls: ['./grid-home.component.css']
 })
 export class GridHomeComponent implements OnInit {
 

@@ -1,5 +1,4 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Animations } from '../animations';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { ActivatedRoute } from '@angular/router';
@@ -7,6 +6,8 @@ import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 import { DomSanitizer } from '@angular/platform-browser';
+
+import { trigger, transition, style, animate, state } from '@angular/animations';
 
 @Component({
   selector: 'app-info-view',
@@ -19,7 +20,20 @@ import { DomSanitizer } from '@angular/platform-browser';
     '[style.width]': "'100%'",
     '[style.height]': "'100%'"
   },
-  animations: Animations.infoView
+  animations: [
+    trigger('routeAnimation', [
+        state('*', style({transform: 'translateY(0)', opacity: 1})),
+        transition('void => *', [
+            style({transform: 'translateY(5%)', opacity: 0}),
+            animate('150ms')
+        ]),
+        transition('* => void', [
+            animate('150ms', 
+                style({transform: 'translateY(5%)', opacity: 0})
+            )
+        ])
+    ])
+  ]
 })
 export class InfoViewComponent implements OnInit, OnDestroy {
 

@@ -9,24 +9,26 @@
 }">
   <img class="block" src={{mainPath}} />
 
-  <img class="block" src={{currentMainPath}}
-    *ngIf="mainHovering" [@main-overlay-animation] />
+  <div class="hide-main" [class.show]="mainHovering">
+    
+    <img class="block" src={{currentMainPath}} />
 
-  <svg class="block">
-    <rect *ngIf="mainHovering" [@main-overlay-animation]
-      width="100%" height="100%" fill="rgba(0,0,0,0.7)" />
-  </svg>
+    <svg class="block">
+      <rect width="100%" height="100%" fill="rgba(0,0,0,0.7)" />
+    </svg>
 
-  <img class="block" src="../assets/hex/Main Images/Main_HexBorder-min.png"/>
-
-  <div *ngIf="mainHovering" [@main-overlay-animation]>
-    <div style="" class="main-title" [innerHTML]=hoverTitle>
+    <div class="main-title" [innerHTML]=hoverTitle>
 
     </div>
     <div class="main-description" [innerHTML]=hoverDescription>
 
     </div>
+
   </div>
+
+  <img class="block" src="../assets/hex/Main Images/Main_HexBorder-min.png"/>
+
+  
 
 </div>
 
@@ -65,12 +67,15 @@
     </div>
 
     <!-- Overlay -->
-    <svg class="block" [attr.viewBox]="'0 0 '  + ((tile.size) * (tile.size > 2 ? (sin60 * blockSize) : (blockSize)) * svgToGridRatio) + ' '
+    <div [hidden]="!tile.hovering">
+      <svg class="block" [attr.viewBox]="'0 0 '  + ((tile.size) * (tile.size > 2 ? (sin60 * blockSize) : (blockSize)) * svgToGridRatio) + ' '
         + ((tile.size) * (tile.size > 2 ? (sin60 * blockSize) : (blockSize)) * svgToGridRatio)">
-      <polygon *ngIf="tile.hovering" [@main-overlay-animation]
-      style="fill:rgba(255,255,255,0.5)"
-      [attr.points]="tile.svgPoints" />
-    </svg>
+        <polygon
+        style="fill:rgba(255,255,255,0.5)"
+        [attr.points]="tile.svgPoints" />
+      </svg>
+    </div>
+    
 
   </div>
 
